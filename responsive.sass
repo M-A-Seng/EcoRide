@@ -1,0 +1,113 @@
+////////////////////////////////////////////////////
+
+// NOTE IMPORTANTE___________________________________
+    // Si vous ne trouvez pas les propriétés associés 
+    // au visuel d'une élément il est probable que des
+    // classes bootstrap ont été utilisées à la place.
+    // Veuillez donc inspecter le html.
+
+////////////////////////////////////////////////////
+
+@use 'style'
+@use 'sass:color'
+
+// -------------------------------------------------
+// VARIABLES
+// -------------------------------------------------
+
+// tablet
+$tablet-font-size-body: 1.06rem //17px (optimal 16px < 18px)
+// desktop
+$desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
+
+// -------------------------------------------------
+// TABLET
+// -------------------------------------------------
+
+@media screen and (min-width: 768px)
+    // GLOBAL ------------------------------------------
+    h1, h2
+        font-size: 2.25rem //36px (max 40px)
+    p
+        font-size: $tablet-font-size-body
+        width: 85%
+        text-align: justify
+        line-height: 1.5rem //24px
+    
+    // HEADER ------------------------------------------
+    header
+        min-height: 3.18rem //51px
+        max-height: 4.07rem //65px
+    .ecoride-logo__header
+        max-width: 8.5rem
+    .header-icon
+        width: 2.38rem //38px (min 28px | max 48px)
+        margin: 0 1.5rem
+
+    // FOOTER --------------------------------------------
+    .footer-links-div
+        margin: 1.5rem 0 1rem
+    .ecoride-logo__footer
+        width: 14rem
+
+    // MAIN ------------------------------------------
+    .hero
+        background: url(img/pictures/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
+        background-size: cover
+    .btn
+        font-size: $tablet-font-size-body
+        &__cta
+            font-size: 1.25rem
+            height: 3rem //48px
+            width: 12rem //192px
+
+// -------------------------------------------------
+// DESKTOP
+// -------------------------------------------------
+
+@media screen and (min-width: 992px)
+    // GLOBAL ------------------------------------------
+    main
+        margin: 1rem 4rem 2rem
+    h1
+        font-size: 3rem //48px (max 56px)
+    h2
+        font-size: 2.25rem //36px (max 48px)
+    p
+        font-size: $desktop-font-size-body
+        width: 80%
+    
+    // HEADER ------------------------------------------
+    header
+        min-height: 3.5rem //56px
+        max-height: 4.69rem //75px
+    .ecoride-logo__header
+        max-width: 9.5rem
+    .header-icon
+        width: 2.75rem //44px (min 32px | max 56px)
+        margin: 0 3rem
+    
+    // FOOTER ----------------------------------------
+    .footer-links-div
+        margin: 2rem 0
+    .ecoride-logo__footer
+        width: 15rem
+
+    // MAIN ------------------------------------------
+    .hero
+        height: 90vh
+        background: url(img/pictures/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
+        background-size: cover
+    .btn
+        font-size: $desktop-font-size-body
+        &__cta
+            font-size: 1.5rem
+            width: 15rem //240px
+    .homepage-badge-img-1
+        width: 9.38rem //150px
+        height: 9.38rem //150px
+        margin: 1.5rem 0 0 3rem
+    .homepage-badge-img-2
+        width: 8.13rem //130px
+        height: 8.13rem //130px
+

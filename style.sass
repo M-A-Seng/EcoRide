@@ -1,0 +1,252 @@
+////////////////////////////////////////////////////
+
+// NOTE IMPORTANTE___________________________________
+    // Si vous ne trouvez pas les propriétés associés 
+    // au visuel d'une élément il est probable que des
+    // classes bootstrap ont été utilisées à la place.
+    // Veuillez donc inspecter le html.
+
+////////////////////////////////////////////////////
+
+@use 'sass:color'
+
+// -------------------------------------------------
+// VARIABLES
+// -------------------------------------------------
+
+// header, footer, menu background,     
+$brown-primary: #3C3730  
+// menu links default, button details normal card 
+$brown-secondary: #5E564C
+// primary background homepage, form, profil user
+$light-primary: #E7EBE3
+// button edit profil, edit search
+$light-secondary: #B9C4AE
+// cta1 homepage, picture homepage, credit banner, ecology banner
+$green-primary: #91AE7B
+// focus link menu, button details ecologic card
+$green-secondary: #495341
+// car svg card covoiturage
+$green-secondary-car: #68745E
+// desktop homepage secondary background
+$green-secondary-desktop: #707E66
+// cards background
+$grey-primary: #CDCCB7
+// card secondary color, button filtrer
+$grey-scondary: #B5B4A2
+// car svg card covoiturage
+$grey-secondary-car: #666554
+// cta2 homepage, nouveau covoiturage, rechecher
+$orange-primary: #CB974F
+
+// titres
+@mixin serif-font
+    font-family: "DM Serif Text", Georgia, Times, serif
+    font-weight: normal
+    font-style: normal
+
+// -------------------------------------------------
+// RESET LIST
+// -------------------------------------------------
+
+*
+    margin: 0
+    padding: 0
+    font-family: "Onest", Verdana, Arial, sans-serif
+    font-optical-sizing: auto
+    font-weight: normal
+    font-style: normal
+
+// -------------------------------------------------
+// GLOBAL
+// -------------------------------------------------
+
+body
+    background-color: $green-secondary-desktop
+
+main
+    background-color: $light-primary
+    color: #000000
+    padding-bottom: 3rem
+
+p
+    // default font-size 16px (1rem)
+    width: 90%
+    text-align: center
+    line-height: 1.4rem //22px
+    margin: 0.75rem 0 // =1.5rem entre paragraphe soit 24px/default
+
+h1, h2, h3
+    @include serif-font
+    text-align: center
+    margin: 1.5rem 0 0.75rem  
+
+h1, h2
+    font-size: 1.75rem //28px (max 32px)
+
+h1
+    font-weight: bold
+
+// -------------------------------------------------
+// HEADER & FOOTER
+// -------------------------------------------------
+
+header, footer
+    background-color: $brown-primary
+
+header
+    position: sticky
+    top: 0
+    min-height: 2.75rem //44px
+    max-height: 3.75rem //60px
+    width: 100%
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-around
+
+.header-icon
+    cursor: pointer
+    width: 1.88rem //30px (min 24px | max 36px)
+    height: auto
+    flex: 0 0 auto
+    margin: 0 1rem
+    &__color
+        fill: #ffffff
+
+.ecoride-logo
+    margin: 0 auto
+    flex: 0 0 auto
+    display: block
+    &__header
+        max-width: 7.5rem
+    &__footer
+        width: 13rem    
+
+footer
+    width: 100%
+    padding: 2rem 10%
+    display: flex
+    flex-direction: column
+    align-items: center
+    & a:link
+        color: #ffffff
+        text-decoration: none
+    & a:hover
+        text-decoration: underline
+    & a:active
+        color: $orange-primary
+    & a:visited
+        color: $orange-primary
+
+.footer-links-div
+    margin: 1rem 0
+
+// -------------------------------------------------
+// MAIN
+// -------------------------------------------------
+
+.hero
+    width: 100%
+    height: 50vh
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    background: url(img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
+    background-size: cover
+    & h1, p
+        margin: 0
+    & h1
+        text-shadow: 0 0 0.5rem #000000
+
+.homepage-badge-img-1
+    fill: #91AE7B
+    width: 8.75rem //140px
+    height: 8.75rem //140px
+    flex: 0 0 auto
+    margin: 1.5rem 1rem 0
+
+.homepage-badge-img-2
+    width: 6.88rem //110px
+    height: 6.88rem //110px
+    margin: 2rem 1rem 0
+
+.btn
+    margin: 1rem 0
+    &__cta
+        @include serif-font
+        letter-spacing: 0.15rem
+        font-weight: bold
+        height: 2.75rem //44px 
+        width: 11rem //176px
+        border-radius: 0.5rem
+        &--hero
+            color: #000000
+            background: $green-primary
+            border: #ffffff 2px solid
+            box-shadow: 0 0 1.5rem 0.9rem rgba(0, 0, 0, 0.7)
+            &:hover, &:active
+                color: #ffffff
+                background: rgba(0, 0, 0, 0.7)
+                border: $green-primary 3px solid
+                box-shadow: 0 0 1rem 0.6rem rgba(255, 255, 255, 0.2)
+        &--orange
+            background: $orange-primary
+            border: color.scale($orange-primary, $lightness: -50%) 2px solid
+            box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.2)
+            &:hover, &:active
+                box-shadow: 0 0.3rem 1rem 0.4rem transparentize(color.scale($orange-primary, $lightness: -60%), 0.5)
+                background: transparentize($orange-primary, 0.6)
+                border: color.scale($orange-primary, $lightness: -50%) 3px solid
+
+// -------------------------------------------------
+// CARDS
+// -------------------------------------------------
+
+// "crd" à la place de "card" pour ne pas interférer avec les classes card bootstrap
+@mixin crd-base
+    // margin:
+    // padding:
+    // border-radius:  
+
+.crd-normal
+    // border:
+    @include crd-base
+    &__svg
+        color: $grey-secondary-car
+    &__button
+        color: #ffffff
+        background-color: $brown-secondary
+
+.crd-eco
+    // border:
+    @include crd-base
+    &__svg
+        color: $green-secondary-car
+    &__button
+        color: #ffffff
+        background-color: $green-secondary
+
+// -------------------------------------------------
+// PROFIL PICTURES
+// -------------------------------------------------
+
+.profil-picture
+    border-radius: 50%
+    object-fit: cover
+    min-width: 44px
+    min-height: 44px
+    &__header
+        max-width: auto
+        max-height: 80%
+    // &__menu
+    //     width: 
+    //     height: 
+    // &__profil
+    //     width: 
+    //     height: 
+    // &__card
+    //     width: 
+    //     height: 
+

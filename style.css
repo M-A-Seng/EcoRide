@@ -1,0 +1,200 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Onest", Verdana, Arial, sans-serif;
+  font-optical-sizing: auto;
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  background-color: #707E66;
+}
+
+main {
+  background-color: #E7EBE3;
+  color: #000000;
+  padding-bottom: 3rem;
+}
+
+p {
+  width: 90%;
+  text-align: center;
+  line-height: 1.4rem;
+  margin: 0.75rem 0;
+}
+
+h1, h2, h3 {
+  font-family: "DM Serif Text", Georgia, Times, serif;
+  font-weight: normal;
+  font-style: normal;
+  text-align: center;
+  margin: 1.5rem 0 0.75rem;
+}
+
+h1, h2 {
+  font-size: 1.75rem;
+}
+
+h1 {
+  font-weight: bold;
+}
+
+header, footer {
+  background-color: #3C3730;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  min-height: 2.75rem;
+  max-height: 3.75rem;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.header-icon {
+  cursor: pointer;
+  width: 1.88rem;
+  height: auto;
+  flex: 0 0 auto;
+  margin: 0 1rem;
+}
+.header-icon__color {
+  fill: #ffffff;
+}
+
+.ecoride-logo {
+  margin: 0 auto;
+  flex: 0 0 auto;
+  display: block;
+}
+.ecoride-logo__header {
+  max-width: 7.5rem;
+}
+.ecoride-logo__footer {
+  width: 13rem;
+}
+
+footer {
+  width: 100%;
+  padding: 2rem 10%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+footer a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+footer a:hover {
+  text-decoration: underline;
+}
+footer a:active {
+  color: #CB974F;
+}
+footer a:visited {
+  color: #CB974F;
+}
+
+.footer-links-div {
+  margin: 1rem 0;
+}
+
+.hero {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: url(img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+  background-size: cover;
+}
+.hero h1, .hero p {
+  margin: 0;
+}
+.hero h1 {
+  text-shadow: 0 0 0.5rem #000000;
+}
+
+.homepage-badge-img-1 {
+  fill: #91AE7B;
+  width: 8.75rem;
+  height: 8.75rem;
+  flex: 0 0 auto;
+  margin: 1.5rem 1rem 0;
+}
+
+.homepage-badge-img-2 {
+  width: 6.88rem;
+  height: 6.88rem;
+  margin: 2rem 1rem 0;
+}
+
+.btn {
+  margin: 1rem 0;
+}
+.btn__cta {
+  font-family: "DM Serif Text", Georgia, Times, serif;
+  font-weight: normal;
+  font-style: normal;
+  letter-spacing: 0.15rem;
+  font-weight: bold;
+  height: 2.75rem;
+  width: 11rem;
+  border-radius: 0.5rem;
+}
+.btn__cta--hero {
+  color: #000000;
+  background: #91AE7B;
+  border: #ffffff 2px solid;
+  box-shadow: 0 0 1.5rem 0.9rem rgba(0, 0, 0, 0.7);
+}
+.btn__cta--hero:hover, .btn__cta--hero:active {
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.7);
+  border: #91AE7B 3px solid;
+  box-shadow: 0 0 1rem 0.6rem rgba(255, 255, 255, 0.2);
+}
+.btn__cta--orange {
+  background: #CB974F;
+  border: #6d4d20 2px solid;
+  box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+.btn__cta--orange:hover, .btn__cta--orange:active {
+  box-shadow: 0 0.3rem 1rem 0.4rem rgba(87, 61, 26, 0.5);
+  background: rgba(203, 151, 79, 0.4);
+  border: #6d4d20 3px solid;
+}
+
+.crd-normal__svg {
+  color: #666554;
+}
+.crd-normal__button {
+  color: #ffffff;
+  background-color: #5E564C;
+}
+
+.crd-eco__svg {
+  color: #68745E;
+}
+.crd-eco__button {
+  color: #ffffff;
+  background-color: #495341;
+}
+
+.profil-picture {
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  min-width: 44px;
+  min-height: 44px;
+}
+.profil-picture__header {
+  max-width: auto;
+  max-height: 80%;
+}/*# sourceMappingURL=style.css.map */
