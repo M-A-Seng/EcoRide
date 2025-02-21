@@ -75,8 +75,11 @@ header {
 .ecoride-logo__header {
   max-width: 7.5rem;
 }
-.ecoride-logo__footer {
+.ecoride-logo__footer, .ecoride-logo__side-menu--big {
   width: 13rem;
+}
+.ecoride-logo__side-menu--small {
+  width: 9rem;
 }
 
 footer {
@@ -102,6 +105,93 @@ footer a:visited {
 
 .footer-links-div {
   margin: 1rem 0;
+}
+
+.dropdown-menu {
+  background-color: #3C3730;
+  border: #1e1c18 solid 1px;
+}
+
+.dropdown-item {
+  height: 2.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #5E564C;
+  border: #303030 solid 1px;
+}
+.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus, .dropdown-item .active {
+  text-decoration: underline;
+}
+.dropdown-item:hover {
+  color: rgb(255, 255, 255);
+  background-color: #8c6a40;
+}
+.dropdown-item:active, .dropdown-item .active {
+  font-weight: bold;
+  background-color: #495341;
+  border: #ffffff solid 1px;
+}
+.dropdown-item:focus {
+  color: white;
+  border: #ffb700 solid 2px;
+  background-color: #665744;
+}
+
+#side-menu {
+  height: 100%;
+  background-color: #3C3730;
+}
+
+#side-menu, .bottom-items {
+  width: 90%;
+  max-width: 21.88rem;
+}
+
+.bottom-items {
+  position: fixed;
+  bottom: 0;
+}
+
+.side-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0 0 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  background-color: #5E564C;
+  border: #303030 solid 1px;
+}
+.side-menu-item:hover, .side-menu-item:active, .side-menu-item:focus, .side-menu-item .active {
+  text-decoration: underline;
+}
+.side-menu-item:hover {
+  color: rgb(255, 255, 255);
+  background-color: #8c6a40;
+}
+.side-menu-item:active, .side-menu-item .active {
+  font-weight: bold;
+  background-color: #495341;
+  border: #ffffff solid 1px;
+}
+.side-menu-item:focus {
+  color: white;
+  border: #ffb700 solid 2px;
+  background-color: #665744;
+}
+
+.close-button {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: end;
+  margin: 1rem 1rem 0 0;
+}
+
+.close-icon {
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
 }
 
 .hero {

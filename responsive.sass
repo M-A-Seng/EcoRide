@@ -34,12 +34,26 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
         text-align: justify
         line-height: 1.5rem //24px
     
+    // MENUS --------------------------------------------
+    .dropdown-menu, .side-menu-item
+        font-size: $tablet-font-size-body
+    #side-menu, .bottom-items
+        width: 50%
+        max-width: 21.88rem //350px
+    .side-menu-item
+        padding: 0 0 0 2.5rem
+
+    // ECORIDE LOGOS ----------------------------------
+    .ecoride-logo
+        &__header
+            max-width: 8.5rem
+        &__side-menu--big, &__footer
+            width: 14rem
+
     // HEADER ------------------------------------------
     header
         min-height: 3.18rem //51px
         max-height: 4.07rem //65px
-    .ecoride-logo__header
-        max-width: 8.5rem
     .header-icon
         width: 2.38rem //38px (min 28px | max 48px)
         margin: 0 1.5rem
@@ -47,8 +61,6 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     // FOOTER --------------------------------------------
     .footer-links-div
         margin: 1.5rem 0 1rem
-    .ecoride-logo__footer
-        width: 14rem
 
     // MAIN ------------------------------------------
     .hero
@@ -77,12 +89,29 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
         font-size: $desktop-font-size-body
         width: 80%
     
+    // ECORIDE LOGOS ------------------------------------
+    .ecoride-logo
+        &__header
+            max-width: 9.5rem
+        &__side-menu--big, &__footer
+            width: 15rem
+    
+    // MENUS --------------------------------------------
+    .dropdown-item, .side-menu-item
+        font-size: $desktop-font-size-body
+        color: rgba(255, 255, 255, 0.7)
+        &:hover
+            color: rgba(255, 255, 255, 1)
+    #side-menu, .bottom-items
+        width: 30%
+        max-width: 21.88rem //350px
+    .side-menu-item
+        padding: 0 0 0 3rem
+        
     // HEADER ------------------------------------------
     header
         min-height: 3.5rem //56px
         max-height: 4.69rem //75px
-    .ecoride-logo__header
-        max-width: 9.5rem
     .header-icon
         width: 2.75rem //44px (min 32px | max 56px)
         margin: 0 3rem
@@ -90,8 +119,6 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     // FOOTER ----------------------------------------
     .footer-links-div
         margin: 2rem 0
-    .ecoride-logo__footer
-        width: 15rem
 
     // MAIN ------------------------------------------
     .hero

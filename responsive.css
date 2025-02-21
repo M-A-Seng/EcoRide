@@ -78,6 +78,9 @@ header {
 .ecoride-logo__footer {
   width: 13rem;
 }
+.ecoride-logo__side-menu--big {
+  width: 13rem;
+}
 
 footer {
   width: 100%;
@@ -97,11 +100,84 @@ footer a:active {
   color: #CB974F;
 }
 footer a:visited {
-  color: #B9C4AE;
+  color: #CB974F;
 }
 
 .footer-links-div {
   margin: 1rem 0;
+}
+
+.dropdown-menu {
+  background-color: #3C3730;
+  border: #1e1c18 solid 1px;
+}
+
+.dropdown-item {
+  height: 2.75rem;
+  color: rgba(255, 255, 255, 0.9);
+  background-color: #5E564C;
+  border: #303030 solid 1px;
+}
+.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus, .dropdown-item .active {
+  text-decoration: underline;
+}
+.dropdown-item:hover {
+  color: rgb(255, 255, 255);
+  background-color: #8c6a40;
+}
+.dropdown-item:active, .dropdown-item .active {
+  font-weight: bold;
+  background-color: #495341;
+  border: #ffffff solid 1px;
+}
+.dropdown-item:focus {
+  color: white;
+  border: #ffb700 solid 2px;
+  background-color: #665744;
+}
+
+#side-menu {
+  height: 100%;
+  background-color: #3C3730;
+}
+
+#side-menu, .bottom-items {
+  width: 90%;
+  max-width: 21.88rem;
+}
+
+.bottom-items {
+  position: fixed;
+  bottom: 0;
+}
+
+.side-menu-item {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 2.75rem;
+  padding: 0 0 0 2rem;
+  color: rgba(255, 255, 255, 0.9);
+  text-decoration: none;
+  background-color: #5E564C;
+  border: #303030 solid 1px;
+}
+.side-menu-item:hover, .side-menu-item:active, .side-menu-item:focus, .side-menu-item .active {
+  text-decoration: underline;
+}
+.side-menu-item:hover {
+  color: rgb(255, 255, 255);
+  background-color: #8c6a40;
+}
+.side-menu-item:active, .side-menu-item .active {
+  font-weight: bold;
+  background-color: #495341;
+  border: #ffffff solid 1px;
+}
+.side-menu-item:focus {
+  color: white;
+  border: #ffb700 solid 2px;
+  background-color: #665744;
 }
 
 .hero {
@@ -209,12 +285,25 @@ footer a:visited {
     text-align: justify;
     line-height: 1.5rem;
   }
-  header {
-    min-height: 3.18rem;
-    max-height: 4.07rem;
+  .dropdown-menu, .side-menu-item {
+    font-size: 1.06rem;
+  }
+  #side-menu, .bottom-items {
+    width: 50%;
+    max-width: 21.88rem;
+  }
+  .side-menu-item {
+    padding: 0 0 0 2.5rem;
   }
   .ecoride-logo__header {
     max-width: 8.5rem;
+  }
+  .ecoride-logo__side-menu--big, .ecoride-logo__footer {
+    width: 14rem;
+  }
+  header {
+    min-height: 3.18rem;
+    max-height: 4.07rem;
   }
   .header-icon {
     width: 2.38rem;
@@ -222,9 +311,6 @@ footer a:visited {
   }
   .footer-links-div {
     margin: 1.5rem 0 1rem;
-  }
-  .ecoride-logo__footer {
-    width: 14rem;
   }
   .hero {
     background: url(img/pictures/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
@@ -253,12 +339,29 @@ footer a:visited {
     font-size: 1.12rem;
     width: 80%;
   }
+  .ecoride-logo__header {
+    max-width: 9.5rem;
+  }
+  .ecoride-logo__side-menu--big, .ecoride-logo__footer {
+    width: 15rem;
+  }
+  .dropdown-item, .side-menu-item {
+    font-size: 1.12rem;
+    color: rgba(255, 255, 255, 0.7);
+  }
+  .dropdown-item:hover, .side-menu-item:hover {
+    color: rgb(255, 255, 255);
+  }
+  #side-menu, .bottom-items {
+    width: 30%;
+    max-width: 21.88rem;
+  }
+  .side-menu-item {
+    padding: 0 0 0 3rem;
+  }
   header {
     min-height: 3.5rem;
     max-height: 4.69rem;
-  }
-  .ecoride-logo__header {
-    max-width: 9.5rem;
   }
   .header-icon {
     width: 2.75rem;
@@ -266,9 +369,6 @@ footer a:visited {
   }
   .footer-links-div {
     margin: 2rem 0;
-  }
-  .ecoride-logo__footer {
-    width: 15rem;
   }
   .hero {
     height: 90vh;

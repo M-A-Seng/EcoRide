@@ -109,19 +109,21 @@ header
     cursor: pointer
     width: 1.88rem //30px (min 24px | max 36px)
     height: auto
-    flex: 0 0 auto
+    flex: 0 0 auto //empêcher l'image de se déformer
     margin: 0 1rem
     &__color
         fill: #ffffff
 
 .ecoride-logo
     margin: 0 auto
-    flex: 0 0 auto
+    flex: 0 0 auto //empêcher l'image de se déformer
     display: block
     &__header
         max-width: 7.5rem
-    &__footer
-        width: 13rem    
+    &__footer, &__side-menu--big
+        width: 13rem
+    &__side-menu--small
+        width: 9rem
 
 footer
     width: 100%
@@ -141,6 +143,72 @@ footer
 
 .footer-links-div
     margin: 1rem 0
+
+// -------------------------------------------------
+// SIDE MENU AND DROPDOWN
+// -------------------------------------------------
+
+@mixin menu-items-states
+    &:hover, &:active, &:focus, .active
+        text-decoration: underline
+    &:hover
+        color: rgba(255, 255, 255, 1)
+        background-color: color.scale($brown-secondary, $saturation: 30%, $lightness: 10%)
+    &:active, .active
+        font-weight: bold
+        background-color: $green-secondary
+        border: #ffffff solid 1px
+    &:focus
+        color: white
+        border: #ffb700 solid 2px
+        background-color: color.scale($brown-secondary, $saturation: 10%)
+
+.dropdown-menu
+    background-color: $brown-primary
+    border: color.scale($brown-primary, $lightness: -50%) solid 1px
+
+.dropdown-item
+    height: 2.75rem //44px
+    color: rgba(255, 255, 255, 0.9)
+    background-color: $brown-secondary
+    border: color.scale($brown-primary, $blackness: 20%) solid 1px
+    @include menu-items-states
+    
+#side-menu
+    height: 100%
+    background-color: $brown-primary
+
+#side-menu, .bottom-items
+    width: 90%
+    max-width: 21.88rem //350px
+
+.bottom-items
+    position: fixed
+    bottom: 0
+
+.side-menu-item
+    display: flex
+    align-items: center
+    width: 100%
+    height: 2.75rem //44px
+    padding: 0 0 0 2rem
+    color: rgba(255, 255, 255, 0.9)
+    text-decoration: none
+    background-color: $brown-secondary
+    border: color.scale($brown-primary, $blackness: 20%) solid 1px
+    @include menu-items-states
+
+.close-button
+    background: transparent
+    border: none
+    display: flex
+    justify-content: end
+    margin: 1rem 1rem 0 0
+
+.close-icon
+    color: #ffffff
+    width: 2rem
+    height: 2rem  
 
 // -------------------------------------------------
 // MAIN
@@ -164,7 +232,7 @@ footer
     fill: #91AE7B
     width: 8.75rem //140px
     height: 8.75rem //140px
-    flex: 0 0 auto
+    flex: 0 0 auto //empêcher l'image de se déformer
     margin: 1.5rem 1rem 0
 
 .homepage-badge-img-2
