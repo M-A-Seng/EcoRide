@@ -33,7 +33,7 @@ $green-secondary-desktop: #707E66
 // cards background
 $grey-primary: #CDCCB7
 // card secondary color, button filtrer
-$grey-scondary: #B5B4A2
+$grey-secondary: #B5B4A2
 // car svg card covoiturage
 $grey-secondary-car: #666554
 // cta2 homepage, nouveau covoiturage, rechecher
@@ -53,9 +53,7 @@ $orange-primary: #CB974F
     margin: 0
     padding: 0
     font-family: "Onest", Verdana, Arial, sans-serif
-    font-optical-sizing: auto
-    font-weight: normal
-    font-style: normal
+    // font-optical-sizing: auto
 
 // -------------------------------------------------
 // GLOBAL
@@ -65,9 +63,10 @@ body
     background-color: $green-secondary-desktop
 
 main
+    height: 100%
     background-color: $light-primary
     color: #000000
-    padding-bottom: 3rem
+    padding: 3rem 0
 
 p
     // default font-size 16px (1rem)
@@ -86,6 +85,7 @@ h1, h2
 
 h1
     font-weight: bold
+    letter-spacing: 0.2rem
 
 // -------------------------------------------------
 // HEADER & FOOTER
@@ -97,8 +97,7 @@ header, footer
 header
     position: sticky
     top: 0
-    min-height: 2.75rem //44px
-    max-height: 3.75rem //60px
+    height: 3rem //48px (optimal 44 < 60px)
     width: 100%
     display: flex
     flex-direction: row
@@ -140,9 +139,14 @@ footer
         color: $orange-primary
     & a:visited
         color: $orange-primary
+    & p
+        width: 100%
 
 .footer-links-div
-    margin: 1rem 0
+    margin: 1rem 2rem
+    width: 100%
+    & a
+        margin: 0.25rem 0
 
 // -------------------------------------------------
 // SIDE MENU AND DROPDOWN
@@ -221,12 +225,13 @@ footer
     flex-direction: column
     justify-content: center
     align-items: center
-    background: url(img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
+    background: url(../img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
     background-size: cover
     & h1, p
         margin: 0
     & h1
         text-shadow: 0 0 0.5rem #000000
+        margin: 0
 
 .homepage-badge-img-1
     fill: #91AE7B
@@ -240,33 +245,46 @@ footer
     height: 6.88rem //110px
     margin: 2rem 1rem 0
 
+// -------------------------------------------------
+// BUTTONS
+// -------------------------------------------------
+
+.cta
+    @include serif-font
+    font-size: 1.5rem
+    font-weight: bold
+    letter-spacing: 0.2rem
+    border-radius: 0.5rem
+    &:hover
+        scale: 1.1
+
 .btn
-    margin: 1rem 0
-    &__cta
-        @include serif-font
-        letter-spacing: 0.15rem
-        font-weight: bold
-        height: 2.75rem //44px 
-        width: 11rem //176px
-        border-radius: 0.5rem
-        &--hero
-            color: #000000
-            background: $green-primary
-            border: #ffffff 2px solid
-            box-shadow: 0 0 1.5rem 0.9rem rgba(0, 0, 0, 0.7)
-            &:hover, &:active
-                color: #ffffff
-                background: rgba(0, 0, 0, 0.7)
-                border: $green-primary 3px solid
-                box-shadow: 0 0 1rem 0.6rem rgba(255, 255, 255, 0.2)
-        &--orange
-            background: $orange-primary
-            border: color.scale($orange-primary, $lightness: -50%) 2px solid
-            box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.2)
-            &:hover, &:active
-                box-shadow: 0 0.3rem 1rem 0.4rem transparentize(color.scale($orange-primary, $lightness: -60%), 0.5)
-                background: transparentize($orange-primary, 0.6)
-                border: color.scale($orange-primary, $lightness: -50%) 3px solid
+    margin: auto
+    display: flex
+    justify-content: center
+    align-items: center    
+    &__green //hero
+        color: #000000
+        background: $green-primary
+        border: #ffffff 2px solid
+        box-shadow: 0 0 1.5rem 0.9rem rgba(0, 0, 0, 0.2)
+        &:hover, &:active
+            color: #ffffff
+            background: rgba(0, 0, 0, 0.7)
+            border: color.scale($green-primary, $saturation: 50%) 3px solid
+            box-shadow: 0 0 1rem 0.6rem rgba(255, 255, 255, 0.2)
+    &__orange
+        background: $orange-primary
+        border: 3px color.scale($orange-primary, $lightness: -50%) solid
+        &:hover, &:active
+            border: 3px color.scale($orange-primary, $lightness: -60%) solid
+            background: color.scale($orange-primary, $saturation: 20%)
+            box-shadow: 0 0.3rem 1rem 0.4rem rgba(0,0,0,0.2)
+
+.btn-lg
+    height: 2.75rem //44px 
+    width: 11rem //176px
+
 
 // -------------------------------------------------
 // CARDS

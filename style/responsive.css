@@ -2,9 +2,6 @@
   margin: 0;
   padding: 0;
   font-family: "Onest", Verdana, Arial, sans-serif;
-  font-optical-sizing: auto;
-  font-weight: normal;
-  font-style: normal;
 }
 
 body {
@@ -12,9 +9,10 @@ body {
 }
 
 main {
+  height: 100%;
   background-color: #E7EBE3;
   color: #000000;
-  padding-bottom: 3rem;
+  padding: 3rem 0;
 }
 
 p {
@@ -38,6 +36,7 @@ h1, h2 {
 
 h1 {
   font-weight: bold;
+  letter-spacing: 0.2rem;
 }
 
 header, footer {
@@ -47,8 +46,7 @@ header, footer {
 header {
   position: sticky;
   top: 0;
-  min-height: 2.75rem;
-  max-height: 3.75rem;
+  height: 3rem;
   width: 100%;
   display: flex;
   flex-direction: row;
@@ -75,11 +73,11 @@ header {
 .ecoride-logo__header {
   max-width: 7.5rem;
 }
-.ecoride-logo__footer {
+.ecoride-logo__footer, .ecoride-logo__side-menu--big {
   width: 13rem;
 }
-.ecoride-logo__side-menu--big {
-  width: 13rem;
+.ecoride-logo__side-menu--small {
+  width: 9rem;
 }
 
 footer {
@@ -102,9 +100,16 @@ footer a:active {
 footer a:visited {
   color: #CB974F;
 }
+footer p {
+  width: 100%;
+}
 
 .footer-links-div {
-  margin: 1rem 0;
+  margin: 1rem 2rem;
+  width: 100%;
+}
+.footer-links-div a {
+  margin: 0.25rem 0;
 }
 
 .dropdown-menu {
@@ -180,6 +185,20 @@ footer a:visited {
   background-color: #665744;
 }
 
+.close-button {
+  background: transparent;
+  border: none;
+  display: flex;
+  justify-content: end;
+  margin: 1rem 1rem 0 0;
+}
+
+.close-icon {
+  color: #ffffff;
+  width: 2rem;
+  height: 2rem;
+}
+
 .hero {
   width: 100%;
   height: 50vh;
@@ -187,7 +206,7 @@ footer a:visited {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+  background: url(../img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
   background-size: cover;
 }
 .hero h1, .hero p {
@@ -195,6 +214,7 @@ footer a:visited {
 }
 .hero h1 {
   text-shadow: 0 0 0.5rem #000000;
+  margin: 0;
 }
 
 .homepage-badge-img-1 {
@@ -211,40 +231,50 @@ footer a:visited {
   margin: 2rem 1rem 0;
 }
 
-.btn {
-  margin: 1rem 0;
-}
-.btn__cta {
+.cta {
   font-family: "DM Serif Text", Georgia, Times, serif;
   font-weight: normal;
   font-style: normal;
-  letter-spacing: 0.15rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  height: 2.75rem;
-  width: 11rem;
+  letter-spacing: 0.2rem;
   border-radius: 0.5rem;
 }
-.btn__cta--hero {
+.cta:hover {
+  scale: 1.1;
+}
+
+.btn {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.btn__green {
   color: #000000;
   background: #91AE7B;
   border: #ffffff 2px solid;
-  box-shadow: 0 0 1.5rem 0.9rem rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 1.5rem 0.9rem rgba(0, 0, 0, 0.2);
 }
-.btn__cta--hero:hover, .btn__cta--hero:active {
+.btn__green:hover, .btn__green:active {
   color: #ffffff;
   background: rgba(0, 0, 0, 0.7);
-  border: #91AE7B 3px solid;
+  border: #8bd753 3px solid;
   box-shadow: 0 0 1rem 0.6rem rgba(255, 255, 255, 0.2);
 }
-.btn__cta--orange {
+.btn__orange {
   background: #CB974F;
-  border: #6d4d20 2px solid;
-  box-shadow: 0 0 1rem 0.4rem rgba(0, 0, 0, 0.2);
+  border: 3px #6d4d20 solid;
 }
-.btn__cta--orange:hover, .btn__cta--orange:active {
-  box-shadow: 0 0.3rem 1rem 0.4rem rgba(87, 61, 26, 0.5);
-  background: rgba(203, 151, 79, 0.4);
-  border: #6d4d20 3px solid;
+.btn__orange:hover, .btn__orange:active {
+  border: 3px #573d1a solid;
+  background: #d59945;
+  box-shadow: 0 0.3rem 1rem 0.4rem rgba(0, 0, 0, 0.2);
+}
+
+.btn-lg {
+  height: 2.75rem;
+  width: 11rem;
 }
 
 .crd-normal__svg {
@@ -302,8 +332,7 @@ footer a:visited {
     width: 14rem;
   }
   header {
-    min-height: 3.18rem;
-    max-height: 4.07rem;
+    height: 3.25rem;
   }
   .header-icon {
     width: 2.38rem;
@@ -313,13 +342,10 @@ footer a:visited {
     margin: 1.5rem 0 1rem;
   }
   .hero {
-    background: url(img/pictures/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+    background: url(../img/pictures/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
     background-size: cover;
   }
-  .btn {
-    font-size: 1.06rem;
-  }
-  .btn__cta {
+  .btn-lg {
     font-size: 1.25rem;
     height: 3rem;
     width: 12rem;
@@ -360,25 +386,24 @@ footer a:visited {
     padding: 0 0 0 3rem;
   }
   header {
-    min-height: 3.5rem;
-    max-height: 4.69rem;
+    height: 3.5rem;
   }
   .header-icon {
     width: 2.75rem;
     margin: 0 3rem;
+  }
+  footer {
+    padding: 2rem 20%;
   }
   .footer-links-div {
     margin: 2rem 0;
   }
   .hero {
     height: 90vh;
-    background: url(img/pictures/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+    background: url(../img/pictures/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
     background-size: cover;
   }
-  .btn {
-    font-size: 1.12rem;
-  }
-  .btn__cta {
+  .btn-lg {
     font-size: 1.5rem;
     width: 15rem;
   }

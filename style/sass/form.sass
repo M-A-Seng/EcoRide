@@ -1,0 +1,107 @@
+////////////////////////////////////////////////////
+
+// NOTE IMPORTANTE___________________________________
+    // Si vous ne trouvez pas les propriétés associés 
+    // au visuel d'une élément il est probable que des
+    // classes bootstrap ont été utilisées à la place.
+    // Veuillez donc inspecter le html.
+
+////////////////////////////////////////////////////
+
+@use 'style'
+@use 'sass:color'
+
+// -------------------------------------------------
+// VARIABLES
+// -------------------------------------------------
+
+// header, footer, menu background,     
+$brown-primary: #3C3730  
+// menu links default, button details normal card 
+$brown-secondary: #5E564C
+// primary background homepage, form, profil user
+$light-primary: #E7EBE3
+// button edit profil, edit search
+$light-secondary: #B9C4AE
+// cta1 homepage, picture homepage, credit banner, ecology banner
+$green-primary: #91AE7B
+// focus link menu, button details ecologic card
+$green-secondary: #495341
+// car svg card covoiturage
+$green-secondary-car: #68745E
+// desktop homepage secondary background
+$green-secondary-desktop: #707E66
+// cards background
+$grey-primary: #CDCCB7
+// card secondary color, button filtrer
+$grey-secondary: #B5B4A2
+// car svg card covoiturage
+$grey-secondary-car: #666554
+// cta2 homepage, nouveau covoiturage, rechecher
+$orange-primary: #CB974F    
+// tablet
+$tablet-font-size-body: 1.06rem //17px (optimal 16px < 18px)
+// desktop
+$desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
+
+// titres
+@mixin serif-font
+    font-family: "DM Serif Text", Georgia, Times, serif
+
+// -------------------------------------------------
+// GLOBAL
+// -------------------------------------------------
+
+form
+    display: flex
+    flex-direction: column
+    justify-content: center
+    & button[type="submit"]
+        margin-top: 2rem
+        letter-spacing: 0.15rem
+        &:hover
+            font-weight: bold
+    
+.form-element
+    margin: 0.5rem auto
+    width: 90%
+    & input
+        border: $grey-secondary 1px solid
+        height: 2.75rem //44px
+        &:focus, &:active
+            border: 3px $orange-primary solid
+
+.password-input
+    display: flex
+    align-items: center
+
+.icon-input
+    cursor: pointer
+    width: 1.5rem
+    height: 1.5rem
+    margin-left: 0.5rem
+
+// -------------------------------------------------
+// TABLET
+// -------------------------------------------------
+
+@media screen and (min-width: 768px)
+    .form-element
+        min-width: 20rem //320px
+        width: 60%
+    label
+        font-size: $tablet-font-size-body
+
+// -------------------------------------------------
+// DESKTOP
+// -------------------------------------------------
+
+@media screen and (min-width: 992px)
+    main
+        margin: 4rem auto 8rem
+        min-width: 30rem
+        width: 50%
+    .form-element
+        width: 40%
+    label
+        font-size: $desktop-font-size-body
