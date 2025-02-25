@@ -16,9 +16,9 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Onest:wght@100..900&display=swap" rel="stylesheet">
     <!--STYLES-->
-    <link rel="stylesheet" type="text/css" href="../style/style.css">
-    <link rel="stylesheet" type="text/css" href="../style/responsive.css">
-    <link rel="stylesheet" type="text/css" href="../style/form.css">
+    <link rel="stylesheet" type="text/css" href="../style/sass/style.css">
+    <link rel="stylesheet" type="text/css" href="../style/sass/responsive.css">
+    <link rel="stylesheet" type="text/css" href="../style/sass/form.css">
     <!--STYLES-->
     <script defer src="../script/form.js"></script>
 </head>
@@ -93,38 +93,64 @@
     </nav>
 
     <main>
+        <div class="message"> <!--Supprimer ce block une fois inutile-->
+            <p>L'inscription à notre plateforme en développement n'est pas encore disponible.</p>
+            <p>Vous êtes libre de tester le formulaire. Vos données ne sont pas enregistrées et sont automatiquement détruites à la soumission du formulaire</p>
+            <p>Nous serions heureux de vous accueillir dès que possible.</p>
+            <p>À très bientôt sur EcoRide!</p>
+        </div>
         <h1>Inscription</h1>
-        <form action="#" method="post">
-            <div class="form-element valid">
-                <label for="nom" class="form-label">Nom:</label>
-                <input type="text" class="form-control" name="nom" id="nom">
+        <form action="#" method="post" id="form">
+            <div class="form-element">
+                <label for="lastName" class="form-label">Nom:</label>
+                <div class="d-flex align-items-center">
+                    <input required type="text" class="form-control name-input" name="Nom" id="lastName" maxlength="50">
+                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                </div>
+                <small id="note-lastName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés. Votre nom doit faire minimum 2 caractères.</small>
             </div>
-            <div class="form-element ">
-                <label for="prenom" class="form-label">Prénom:</label>
-                <input type="text" class="form-control" name="prenom" id="prenom">
+            <div class="form-element">
+                <label for="firstName" class="form-label">Prénom:</label>
+                <div class="d-flex align-items-center">
+                    <input required type="text" class="form-control name-input" name="Prénom" id="firstName" maxlength="50">
+                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                </div>
+                <small id="note-firstName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés. Votre Prénom doit faire minimum 2 caractères.</small>
             </div>
             <div class="form-element">
                 <label for="email" class="form-label">Email:</label>
-                <input type="email" class="form-control" name="email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" >
+                <div class="d-flex align-items-center">
+                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" maxlength="150">
+                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                </div>
                 <small id="note-email" class="form-text text-muted">Veuillez utiliser une adresse email valide.</small>
             </div>
             <div class="form-element">
                 <label for="password" class="form-label">Mot de passe:</label>
-                <div class="password-input">
-                    <input type="password" class="form-control" name="password" id="password" aria-describedby="note-mot-de-passe">
-                    <img class="icon-input" id="eyeIconPassword" src="../img/pictures/eye-slash-icon.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                <div class="d-flex align-items-center">
+                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="note-password" maxlength="50">
+                    <img class="eye-icon-password" id="eyeIconPassword" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
-                <small id="note-mot-de-passe" class="form-text text-muted">Votre mot de passe doit faire minimum 9 caractères. Il doit contenir au moins une lettre minuscule, une lettre majuscule, un chiffre et un symbole (/ , - ; # ! : _ $ ' ")</small>
+                <!--Feedback de saisie de mot de passe sécurisé-->
+                <div id="note-password" class="password-checklist">
+                    <p class="lowercaseFeedback"><span class="js-lowercaseCheck js-display-check"></span>1 lettre minuscule minimum</p>
+                    <p class="uppercaseFeedback"><span class="js-uppercaseCheck js-display-check"></span>1 lettre majuscule minimum</p>
+                    <p class="numberFeedback"><span class="js-numberCheck js-display-check"></span>1 chiffre minimum</p>
+                    <p class="symbolFeedback"><span class="js-symbolCheck js-display-check"></span>1 symbole minimum</p>
+                    <p class="minLengthFeedback"><span class="js-minLengthCheck js-display-check"></span>9 caractères minimum</p>
+                </div>
             </div>
             <div class="form-element">
                 <label for="passwordConfirmation" class="form-label">Confirmez votre mot de passe:</label>
                 <div class="password-input">
-                    <input type="password" class="form-control" name="passwordConfirmation" id="passwordConfirmation" aria-describedby="note-confirmer-mdp">
-                    <img class="icon-input" id="eyeIconPswConfirmation" src="../img/pictures/eye-slash-icon.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                    <input required type="password" class="form-control" name="Confirmation mot de passe" id="passwordConfirmation" aria-describedby="note-confirmPassword" maxlength="50">
+                    <img class="eye-icon-password" id="eyeIconPswConfirmation" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
-                <small id="note-confirmer-mdp" class="form-text text-muted">Réécrivez votre mot de passe pour confirmer.</small>
+                <small id="note-confirmPassword" class="form-text text-muted">Réécrivez votre mot de passe pour confirmer.</small>
             </div>
-            <button type="submit" class="btn btn__orange btn-lg text-black">
+            <button type="submit" id="submit" class="btn btn__orange btn-lg text-black" disabled>
                 M'inscrire
             </button>
             <p class="m-auto mt-3 mb-3">En vous inscrivant, vous acceptez les <a href="#">conditions d'utilisation</a> de la plateforme EcoRide.</p>
@@ -135,7 +161,7 @@
             <a class="d-block m-auto" href="#">Se connecter</a>
         </div>
     </main>
-
+      
     <footer>
         <img class="ecoride-logo ecoride-logo__footer" src="../img/logo/logo-with-slogan.svg" alt="Logo de EcoRige" aria-hidden="true">
         <div class="row text-center justify-content-around footer-links-div">

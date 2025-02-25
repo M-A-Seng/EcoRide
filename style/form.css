@@ -330,22 +330,73 @@ form button[type=submit]:hover {
   border: 3px #CB974F solid;
 }
 
+#note-lastName, #note-firstName {
+  color: #ad0a0a;
+}
+
+.password-checklist p {
+  color: #5E564C;
+  text-align: left;
+  line-height: 1rem;
+}
+
 .password-input {
   display: flex;
   align-items: center;
 }
 
 .icon-input {
+  width: 1.9rem;
+  height: 1.9rem;
+  margin-left: 0.4rem;
+}
+
+.eye-icon-password {
   cursor: pointer;
   width: 1.5rem;
   height: 1.5rem;
   margin-left: 0.5rem;
 }
 
+.message {
+  margin-bottom: 3rem;
+  color: #4d1102;
+}
+.message p {
+  font-family: Calibri;
+  line-height: 2rem;
+  font-size: 1.25rem;
+  margin: auto;
+}
+
+.js-display {
+  display: none;
+}
+
+.js-display-check {
+  margin-right: 1rem;
+}
+
+.valid {
+  background-color: #d9ffdc;
+  border: green 2px solid !important;
+}
+.valid:focus, .valid:active {
+  outline: 4px #abc9a6 solid;
+}
+
+.invalid {
+  background-color: #ffd6d6;
+  border: red 2px solid !important;
+}
+.invalid:focus, .invalid:active {
+  outline: 4px #c9a6a6 solid;
+}
+
 @media screen and (min-width: 768px) {
   .form-element {
     min-width: 20rem;
-    width: 60%;
+    width: 50%;
   }
   label {
     font-size: 1.06rem;
