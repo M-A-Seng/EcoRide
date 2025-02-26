@@ -71,7 +71,7 @@ form
         &:focus, &:active
             border: 3px $orange-primary solid
 
-#note-lastName, #note-firstName
+#note-lastName, #note-firstName, #error-email, #error-password
     color: #ad0a0a
 
 .password-checklist p
@@ -94,7 +94,7 @@ form
     height: 1.5rem
     margin-left: 0.5rem
 
-.message 
+.message  // à supprimer une fois le message enlevé
     margin-bottom: 3rem
     color: #4d1102
     & p 
@@ -103,12 +103,11 @@ form
         font-size: 1.25rem
         margin: auto
 
-
 // -------------------------------------------------
 // USED BY JS
 // -------------------------------------------------
 
-.js-display
+.js-display, #error-email, #error-password
     display: none
 
 .js-display-check

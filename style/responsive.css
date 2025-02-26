@@ -1,10 +1,13 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: "Onest", Verdana, Arial, sans-serif;
 }
 
 body {
+  font-family: Verdana, Arial, sans-serif;
+  word-spacing: 2px;
+  font-weight: normal;
+  font-style: normal;
   background-color: #707E66;
 }
 
@@ -15,17 +18,11 @@ main {
   padding: 3rem 0;
 }
 
-p {
-  width: 90%;
-  text-align: center;
-  line-height: 1.4rem;
-  margin: 0.75rem 0;
-}
-
 h1, h2, h3 {
-  font-family: "DM Serif Text", Georgia, Times, serif;
+  font-family: Georgia, Times, serif;
   font-weight: normal;
   font-style: normal;
+  font-weight: bold;
   text-align: center;
   margin: 1.5rem 0 0.75rem;
 }
@@ -35,8 +32,19 @@ h1, h2 {
 }
 
 h1 {
-  font-weight: bold;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.1rem;
+}
+
+p {
+  width: 90%;
+  text-align: center;
+  line-height: 1.6rem;
+  margin: 0.75rem 0;
+}
+
+small {
+  display: inline-block;
+  font-size: 0.87rem;
 }
 
 header, footer {
@@ -123,22 +131,28 @@ footer p {
   background-color: #5E564C;
   border: #303030 solid 1px;
 }
-.dropdown-item:hover, .dropdown-item:active, .dropdown-item:focus, .dropdown-item .active {
+.dropdown-item:hover, .dropdown-item:focus {
   text-decoration: underline;
 }
 .dropdown-item:hover {
   color: rgb(255, 255, 255);
   background-color: #8c6a40;
 }
-.dropdown-item:active, .dropdown-item .active {
-  font-weight: bold;
-  background-color: #495341;
-  border: #ffffff solid 1px;
-}
 .dropdown-item:focus {
   color: white;
   border: #ffb700 solid 2px;
   background-color: #665744;
+}
+.dropdown-item.active {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: #495341;
+  border: #ffffff solid 1px;
+  cursor: default;
+}
+.dropdown-item.active:hover {
+  background-color: #495341;
 }
 
 #side-menu {
@@ -149,11 +163,6 @@ footer p {
 #side-menu, .bottom-items {
   width: 90%;
   max-width: 21.88rem;
-}
-
-.bottom-items {
-  position: fixed;
-  bottom: 0;
 }
 
 .side-menu-item {
@@ -167,22 +176,33 @@ footer p {
   background-color: #5E564C;
   border: #303030 solid 1px;
 }
-.side-menu-item:hover, .side-menu-item:active, .side-menu-item:focus, .side-menu-item .active {
+.side-menu-item:hover, .side-menu-item:focus {
   text-decoration: underline;
 }
 .side-menu-item:hover {
   color: rgb(255, 255, 255);
   background-color: #8c6a40;
 }
-.side-menu-item:active, .side-menu-item .active {
-  font-weight: bold;
-  background-color: #495341;
-  border: #ffffff solid 1px;
-}
 .side-menu-item:focus {
   color: white;
   border: #ffb700 solid 2px;
   background-color: #665744;
+}
+.side-menu-item.active {
+  color: #ffffff;
+  text-decoration: underline;
+  font-weight: bold;
+  background-color: #495341;
+  border: #ffffff solid 1px;
+  cursor: default;
+}
+.side-menu-item.active:hover {
+  background-color: #495341;
+}
+
+.bottom-items {
+  position: fixed;
+  bottom: 0;
 }
 
 .close-button {
@@ -231,20 +251,10 @@ footer p {
   margin: 2rem 1rem 0;
 }
 
-.cta {
-  font-family: "DM Serif Text", Georgia, Times, serif;
+.btn {
+  font-family: Georgia, Times, serif;
   font-weight: normal;
   font-style: normal;
-  font-size: 1.5rem;
-  font-weight: bold;
-  letter-spacing: 0.2rem;
-  border-radius: 0.5rem;
-}
-.cta:hover {
-  scale: 1.1;
-}
-
-.btn {
   margin: auto;
   display: flex;
   justify-content: center;
@@ -273,8 +283,21 @@ footer p {
 }
 
 .btn-lg {
+  font-weight: bold;
   height: 2.75rem;
-  width: 11rem;
+  width: 13.75rem;
+}
+
+.cta {
+  font-family: Georgia, Times, serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  border-radius: 0.5rem;
+}
+.cta:hover {
+  scale: 1.1;
 }
 
 .crd-normal__svg {
@@ -306,17 +329,16 @@ footer p {
 }
 
 @media screen and (min-width: 768px) {
+  body {
+    font-size: 1.06rem;
+  }
   h1, h2 {
     font-size: 2.25rem;
   }
   p {
-    font-size: 1.06rem;
     width: 85%;
     text-align: justify;
-    line-height: 1.5rem;
-  }
-  .dropdown-menu, .side-menu-item {
-    font-size: 1.06rem;
+    line-height: 1.7rem;
   }
   #side-menu, .bottom-items {
     width: 50%;
@@ -324,6 +346,9 @@ footer p {
   }
   .side-menu-item {
     padding: 0 0 0 2.5rem;
+  }
+  .dropdown-menu {
+    font-size: 1.06rem;
   }
   .ecoride-logo__header {
     max-width: 8.5rem;
@@ -346,23 +371,21 @@ footer p {
     background-size: cover;
   }
   .btn-lg {
-    font-size: 1.25rem;
     height: 3rem;
-    width: 12rem;
+    width: 15rem;
   }
 }
 @media screen and (min-width: 992px) {
+  body {
+    font-size: 1.12rem;
+  }
   main {
     margin: 1rem 4rem 2rem;
   }
   h1 {
     font-size: 3rem;
   }
-  h2 {
-    font-size: 2.25rem;
-  }
   p {
-    font-size: 1.12rem;
     width: 80%;
   }
   .ecoride-logo__header {
@@ -372,7 +395,6 @@ footer p {
     width: 15rem;
   }
   .dropdown-item, .side-menu-item {
-    font-size: 1.12rem;
     color: rgba(255, 255, 255, 0.7);
   }
   .dropdown-item:hover, .side-menu-item:hover {
@@ -403,10 +425,6 @@ footer p {
     background: url(../img/pictures/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
     background-size: cover;
   }
-  .btn-lg {
-    font-size: 1.5rem;
-    width: 15rem;
-  }
   .homepage-badge-img-1 {
     width: 9.38rem;
     height: 9.38rem;
@@ -415,5 +433,8 @@ footer p {
   .homepage-badge-img-2 {
     width: 8.13rem;
     height: 8.13rem;
+  }
+  .cta {
+    font-size: 1.75rem;
   }
 }/*# sourceMappingURL=responsive.css.map */

@@ -41,25 +41,30 @@ $orange-primary: #CB974F
 
 // titres
 @mixin serif-font
-    font-family: "DM Serif Text", Georgia, Times, serif
+    font-family: Georgia, Times, serif
+    font-weight: normal
+    font-style: normal
+// textes
+@mixin sans-serif-font
+    font-family: Verdana, Arial, sans-serif
+    word-spacing: 2px
     font-weight: normal
     font-style: normal
 
 // -------------------------------------------------
-// RESET LIST
+// RESET
 // -------------------------------------------------
 
 *
     margin: 0
     padding: 0
-    font-family: "Onest", Verdana, Arial, sans-serif
-    // font-optical-sizing: auto
 
 // -------------------------------------------------
 // GLOBAL
 // -------------------------------------------------
 
 body
+    @include sans-serif-font
     background-color: $green-secondary-desktop
 
 main
@@ -68,15 +73,9 @@ main
     color: #000000
     padding: 3rem 0
 
-p
-    // default font-size 16px (1rem)
-    width: 90%
-    text-align: center
-    line-height: 1.4rem //22px
-    margin: 0.75rem 0 // =1.5rem entre paragraphe soit 24px/default
-
 h1, h2, h3
     @include serif-font
+    font-weight: bold
     text-align: center
     margin: 1.5rem 0 0.75rem  
 
@@ -84,8 +83,18 @@ h1, h2
     font-size: 1.75rem //28px (max 32px)
 
 h1
-    font-weight: bold
-    letter-spacing: 0.2rem
+    letter-spacing: 0.1rem
+
+p
+    // default font-size 16px (1rem)
+    width: 90%
+    text-align: center
+    line-height: 1.6rem //22px
+    margin: 0.75rem 0 // =1.5rem entre paragraphe soit 24px/default
+
+small
+    display: inline-block
+    font-size: 0.87rem //14px
 
 // -------------------------------------------------
 // HEADER & FOOTER
@@ -153,19 +162,25 @@ footer
 // -------------------------------------------------
 
 @mixin menu-items-states
-    &:hover, &:active, &:focus, .active
+    &:hover, &:focus
         text-decoration: underline
     &:hover
         color: rgba(255, 255, 255, 1)
         background-color: color.scale($brown-secondary, $saturation: 30%, $lightness: 10%)
-    &:active, .active
-        font-weight: bold
-        background-color: $green-secondary
-        border: #ffffff solid 1px
     &:focus
         color: white
         border: #ffb700 solid 2px
         background-color: color.scale($brown-secondary, $saturation: 10%)
+
+@mixin active-state
+    color: #ffffff
+    text-decoration: underline
+    font-weight: bold
+    background-color: $green-secondary
+    border: #ffffff solid 1px
+    cursor: default
+    &:hover
+        background-color: $green-secondary
 
 .dropdown-menu
     background-color: $brown-primary
@@ -177,7 +192,9 @@ footer
     background-color: $brown-secondary
     border: color.scale($brown-primary, $blackness: 20%) solid 1px
     @include menu-items-states
-    
+    &.active //primer sur le style bootstrap
+        @include active-state
+        
 #side-menu
     height: 100%
     background-color: $brown-primary
@@ -185,10 +202,6 @@ footer
 #side-menu, .bottom-items
     width: 90%
     max-width: 21.88rem //350px
-
-.bottom-items
-    position: fixed
-    bottom: 0
 
 .side-menu-item
     display: flex
@@ -201,15 +214,21 @@ footer
     background-color: $brown-secondary
     border: color.scale($brown-primary, $blackness: 20%) solid 1px
     @include menu-items-states
+    &.active //primer sur le style bootstrap
+        @include active-state
 
-.close-button
+.bottom-items //side menu
+    position: fixed
+    bottom: 0
+
+.close-button //side menu
     background: transparent
     border: none
     display: flex
     justify-content: end
     margin: 1rem 1rem 0 0
 
-.close-icon
+.close-icon //side menu
     color: #ffffff
     width: 2rem
     height: 2rem  
@@ -249,16 +268,8 @@ footer
 // BUTTONS
 // -------------------------------------------------
 
-.cta
-    @include serif-font
-    font-size: 1.5rem
-    font-weight: bold
-    letter-spacing: 0.2rem
-    border-radius: 0.5rem
-    &:hover
-        scale: 1.1
-
 .btn
+    @include serif-font
     margin: auto
     display: flex
     justify-content: center
@@ -282,9 +293,17 @@ footer
             box-shadow: 0 0.3rem 1rem 0.4rem rgba(0,0,0,0.2)
 
 .btn-lg
-    height: 2.75rem //44px 
-    width: 11rem //176px
+    font-weight: bold
+    height: 2.75rem //44px
+    width: 13.75rem //220px (44*5)
 
+.cta
+    @include serif-font
+    font-size: 1.5rem
+    letter-spacing: 0.1rem
+    border-radius: 0.5rem
+    &:hover
+        scale: 1.1
 
 // -------------------------------------------------
 // CARDS

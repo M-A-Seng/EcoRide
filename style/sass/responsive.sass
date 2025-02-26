@@ -24,24 +24,25 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
 // TABLET
 // -------------------------------------------------
 
-@media screen and (min-width: 768px)
+@media screen and (min-width: 768px) //breakpoint bootstrap pour cohérence
     // GLOBAL ------------------------------------------
+    body
+        font-size: $tablet-font-size-body
     h1, h2
         font-size: 2.25rem //36px (max 40px)
     p
-        font-size: $tablet-font-size-body
         width: 85%
         text-align: justify
-        line-height: 1.5rem //24px
+        line-height: 1.7rem //24px
     
     // MENUS --------------------------------------------
-    .dropdown-menu, .side-menu-item
-        font-size: $tablet-font-size-body
     #side-menu, .bottom-items
         width: 50%
         max-width: 21.88rem //350px
     .side-menu-item
         padding: 0 0 0 2.5rem
+    .dropdown-menu
+        font-size: $tablet-font-size-body //primer sur le font-size bootstrap
 
     // ECORIDE LOGOS ----------------------------------
     .ecoride-logo
@@ -65,27 +66,26 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     .hero
         background: url(../img/pictures/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
         background-size: cover
+
+    // BUTTONS ------------------------------------
     .btn-lg
-        font-size: 1.25rem
         height: 3rem //48px
-        width: 12rem //192px
+        width: 15rem //240px (48*5)
 
 // -------------------------------------------------
 // DESKTOP
 // -------------------------------------------------
 
-@media screen and (min-width: 992px)
+@media screen and (min-width: 992px) //breakpoint bootstrap pour cohérence
     // GLOBAL ------------------------------------------
+    body
+        font-size: $desktop-font-size-body
     main
         margin: 1rem 4rem 2rem
     h1
         font-size: 3rem //48px (max 56px)
-    h2
-        font-size: 2.25rem //36px (max 48px)
     p
-        font-size: $desktop-font-size-body
         width: 80%
-    
     // ECORIDE LOGOS ------------------------------------
     .ecoride-logo
         &__header
@@ -95,7 +95,6 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     
     // MENUS --------------------------------------------
     .dropdown-item, .side-menu-item
-        font-size: $desktop-font-size-body
         color: rgba(255, 255, 255, 0.7)
         &:hover
             color: rgba(255, 255, 255, 1)
@@ -123,9 +122,6 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
         height: 90vh
         background: url(../img/pictures/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
         background-size: cover
-    .btn-lg
-        font-size: 1.5rem
-        width: 15rem //240px
     .homepage-badge-img-1
         width: 9.38rem //150px
         height: 9.38rem //150px
@@ -134,3 +130,6 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
         width: 8.13rem //130px
         height: 8.13rem //130px
 
+    // BUTTONS ------------------------------------------
+    .cta
+        font-size: 1.75rem

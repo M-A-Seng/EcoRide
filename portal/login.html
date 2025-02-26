@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <title>Inscription EcoRide</title>
+    <title>Connexion EcoRide</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta charset="UTF-8">
     <meta name="description" content="EcoRide est une plateforme française de covoiturage engagée dans la création de trajets plus écologiques et solidaires. En offrant des solutions de transport responsables et adaptées à tous types de déplacements, elle favorise une mobilité durable et respectueuse de l'environnement.">
@@ -16,7 +16,7 @@
     <link rel="stylesheet" type="text/css" href="../style/form.css">
     <!--STYLES-->
     <script defer src="../script/form.js"></script>
-    <script defer src="../script/signup.js"></script>
+    <script defer src="../script/login.js"></script>
 </head>
 
 <body>
@@ -35,8 +35,8 @@
                 <path class="header-icon__color" fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
             </svg> 
             <div class="dropdown-menu" id="dropdown-menu-override" aria-labelledby="triggerId">
-                <a class="dropdown-item d-flex align-items-center" href="#" role="link">Connexion</a>
-                <a class="dropdown-item d-flex align-items-center active" href="#"  role="link">Inscription</a>
+                <a class="dropdown-item d-flex align-items-center active" href="#" role="link">Connexion</a>
+                <a class="dropdown-item d-flex align-items-center" href="#"  role="link">Inscription</a>
             </div>
         </div>           
     </header>
@@ -60,8 +60,8 @@
         </div>
         <hr><!--Sidebar body (links)-->
         <div>
-            <a href="#" class="side-menu-item" role="link">Connexion</a>
-            <a href="#" class="side-menu-item active" role="link">Inscription</a>
+            <a href="#" class="side-menu-item active" role="link">Connexion</a>
+            <a href="#" class="side-menu-item" role="link">Inscription</a>
             <hr>
         </div>
         <div>
@@ -87,77 +87,40 @@
             <a href="#" class="d-none side-menu-item" role="link">Déconnexion</a>
         </div>
     </nav>
+    
 
     <main>
-        <div class="message"> <!--Supprimer ce block une fois inutile-->
-            <p>L'inscription à notre plateforme en développement n'est pas encore disponible.</p>
-            <p>Vous êtes libre de tester le formulaire. Vos données ne sont pas enregistrées et sont automatiquement détruites à la soumission du formulaire</p>
-            <p>Nous serions heureux de vous accueillir dès que possible.</p>
-            <p>À très bientôt sur EcoRide!</p>
-        </div>
-        <h1>Inscription</h1>
+        <h1>Connexion</h1>
         <form action="#" method="post" id="form">
-            <div class="form-element">
-                <label for="lastName" class="form-label">Nom:</label>
-                <div class="d-flex align-items-center">
-                    <input required type="text" class="form-control name-input" name="Nom" id="lastName" maxlength="50">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
-                </div>
-                <small id="note-lastName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés. Votre nom doit faire minimum 2 caractères.</small>
-            </div>
-            <div class="form-element">
-                <label for="firstName" class="form-label">Prénom:</label>
-                <div class="d-flex align-items-center">
-                    <input required type="text" class="form-control name-input" name="Prénom" id="firstName" maxlength="50">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
-                </div>
-                <small id="note-firstName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés. Votre Prénom doit faire minimum 2 caractères.</small>
-            </div>
             <div class="form-element">
                 <label for="email" class="form-label">Email:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" maxlength="150">
+                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="error-email" placeholder="exemple@mail.com" maxlength="150">
                     <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
-                <small id="note-email" class="form-text text-muted">Veuillez utiliser une adresse email valide.</small>
+                <small id="error-email" class="form-text">Adresse email invalide</small>
             </div>
             <div class="form-element">
                 <label for="password" class="form-label">Mot de passe:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="note-password" maxlength="50">
+                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="error-password" maxlength="50">
                     <img class="eye-icon-password" id="eyeIconPassword" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
                     <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
-                <!--Feedback de saisie de mot de passe sécurisé-->
-                <div id="note-password" class="password-checklist">
-                    <p class="lowercaseFeedback"><span class="js-lowercaseCheck js-display-check"></span>1 lettre minuscule minimum</p>
-                    <p class="uppercaseFeedback"><span class="js-uppercaseCheck js-display-check"></span>1 lettre majuscule minimum</p>
-                    <p class="numberFeedback"><span class="js-numberCheck js-display-check"></span>1 chiffre minimum</p>
-                    <p class="symbolFeedback"><span class="js-symbolCheck js-display-check"></span>1 symbole minimum</p>
-                    <p class="minLengthFeedback"><span class="js-minLengthCheck js-display-check"></span>9 caractères minimum</p>
-                </div>
+                <small id="error-password" class="form-text">Mot de passe invalide</small>
             </div>
-            <div class="form-element">
-                <label for="passwordConfirmation" class="form-label">Confirmez votre mot de passe:</label>
-                <div class="password-input">
-                    <input required type="password" class="form-control" name="Confirmation mot de passe" id="passwordConfirmation" aria-describedby="note-confirmPassword" maxlength="50">
-                    <img class="eye-icon-password" id="eyeIconPswConfirmation" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
-                </div>
-                <small id="note-confirmPassword" class="form-text text-muted">Réécrivez votre mot de passe pour confirmer.</small>
-            </div>
-            <button type="submit" id="submit" class="btn btn__orange btn-lg text-black" disabled>
-                M'inscrire
+            <button type="submit" id="submit" class="btn btn__orange btn-lg text-black">
+                Me connecter
             </button>
-            <p class="m-auto mt-3 mb-3">En vous inscrivant, vous acceptez les <a href="#">conditions d'utilisation</a> de la plateforme EcoRide.</p>
+            <small class="m-auto mt-5 mb-3"><a href="#">J'ai oublié mon mot de passe</a></small>
         </form>
         <hr>
         <div class="d-flex flex-column justify-content-center mt-3 pb-5">
-            <p class="m-auto">Vous avez déjà un compte?</p>
-            <a class="d-block m-auto" href="#">Me connecter</a>
+            <p class="m-auto">Vous êtes nouveau?</p>
+            <a class="d-block m-auto" href="#">Créer un compte</a>
         </div>
     </main>
-      
+
     <footer>
         <img class="ecoride-logo ecoride-logo__footer" src="../img/logo/logo-with-slogan.svg" alt="Logo de EcoRige" aria-hidden="true">
         <small class="row text-center justify-content-around footer-links-div">
