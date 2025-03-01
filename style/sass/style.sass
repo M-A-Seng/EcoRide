@@ -63,15 +63,22 @@ $orange-primary: #CB974F
 // GLOBAL
 // -------------------------------------------------
 
+html, body
+    height: 100%
+
 body
     @include sans-serif-font
     background-color: $green-secondary-desktop
+    display: flex
+    flex-direction: column
 
 main
-    height: 100%
+    flex: 1
     background-color: $light-primary
     color: #000000
     padding: 3rem 0
+
+//html body height 100% + body flexbox + main flex: 1; permet de garder le footer en bas de page
 
 h1, h2, h3
     @include serif-font
@@ -96,6 +103,9 @@ small
     display: inline-block
     font-size: 0.87rem //14px
 
+.bold
+    font-weight: bold
+
 // -------------------------------------------------
 // HEADER & FOOTER
 // -------------------------------------------------
@@ -104,8 +114,6 @@ header, footer
     background-color: $brown-primary
 
 header
-    position: sticky
-    top: 0
     height: 3rem //48px (optimal 44 < 60px)
     width: 100%
     display: flex
@@ -116,7 +124,6 @@ header
 .header-icon
     cursor: pointer
     width: 1.88rem //30px (min 24px | max 36px)
-    height: auto
     flex: 0 0 auto //empêcher l'image de se déformer
     margin: 0 1rem
     &__color
@@ -127,18 +134,33 @@ header
     flex: 0 0 auto //empêcher l'image de se déformer
     display: block
     &__header
-        max-width: 7.5rem
+        width: 7.5rem
     &__footer, &__side-menu--big
         width: 13rem
     &__side-menu--small
         width: 9rem
+        position: relative
+        top: -2rem
+
+.credit-banner
+    width: 100%
+    height: 1.5rem
+    background-color: $green-primary
+    display: flex
+    flex-direction: row
+    align-items: center
+    & p
+        font-size: 1rem
+        text-align: left
+        margin-left: 1rem
+
+.sticky //header
+    position: sticky
+    top: 0
 
 footer
     width: 100%
     padding: 2rem 10%
-    display: flex
-    flex-direction: column
-    align-items: center
     & a:link
         color: #ffffff
         text-decoration: none
@@ -152,10 +174,11 @@ footer
         width: 100%
 
 .footer-links-div
-    margin: 1rem 2rem
+    margin: 1rem auto
     width: 100%
+    text-align: center
     & a
-        margin: 0.25rem 0
+        margin: 0.5rem auto
 
 // -------------------------------------------------
 // SIDE MENU AND DROPDOWN
@@ -166,7 +189,7 @@ footer
         text-decoration: underline
     &:hover
         color: rgba(255, 255, 255, 1)
-        background-color: color.scale($brown-secondary, $saturation: 30%, $lightness: 10%)
+        background-color: color.scale($brown-secondary, $saturation: 10%, $lightness: 10%)
     &:focus
         color: white
         border: #ffb700 solid 2px
@@ -198,6 +221,20 @@ footer
 #side-menu
     height: 100%
     background-color: $brown-primary
+    overflow: auto
+    scrollbar-width: none
+    -ms-overflow-style: none
+    &::-webkit-scrollbar
+        display: none
+
+.side-menu-header
+    display: flex
+    flex-direction: column
+    justify-content: center
+    color: $light-primary
+    & p
+        line-height: 1.5rem
+        margin: auto
 
 #side-menu, .bottom-items
     width: 90%
@@ -218,8 +255,10 @@ footer
         @include active-state
 
 .bottom-items //side menu
-    position: fixed
-    bottom: 0
+    width: 100%
+    display: flex
+    flex-direction: column
+    align-items: end
 
 .close-button //side menu
     background: transparent
@@ -244,7 +283,7 @@ footer
     flex-direction: column
     justify-content: center
     align-items: center
-    background: url(../img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
+    background: url(../img/images/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
     background-size: cover
     & h1, p
         margin: 0
@@ -263,6 +302,44 @@ footer
     width: 6.88rem //110px
     height: 6.88rem //110px
     margin: 2rem 1rem 0
+
+#innerProfilSection
+    width: 100%
+    height: 2.75rem //44px
+    margin: 2rem 0 0 0
+    background: transparent
+    & button
+        width: 50%
+        height: 100%
+        margin: 0
+        text-align: center
+        border: $brown-primary 1px solid
+        background-color: $light-primary
+    & .profilSection-active
+        background-color: $brown-primary
+        color: #ffffff
+        text-decoration: underline
+
+#mesCovoiturages, #monVoitures
+    width: 100%
+    height: 100%
+    margin: 0
+    background-color: $brown-primary
+    color: #ffffff
+    & p
+        margin: 0
+
+
+// -------------------------------------------------
+// ESPACE UTILISATEUR
+// -------------------------------------------------
+
+.profil-content p
+    margin: auto
+
+.star-rating img
+    width: 1rem
+    margin: 0 0.25rem
 
 // -------------------------------------------------
 // BUTTONS
@@ -291,11 +368,21 @@ footer
             border: 3px color.scale($orange-primary, $lightness: -60%) solid
             background: color.scale($orange-primary, $saturation: 20%)
             box-shadow: 0 0.3rem 1rem 0.4rem rgba(0,0,0,0.2)
+    &__light
+        background: $light-secondary
+        border: color.scale($light-secondary, $lightness: -50%) 1px solid
+        &:hover, &:active
+            border: 2px color.scale($light-secondary, $lightness: -60%) solid
+            background: color.scale($light-secondary, $saturation: 20%)
 
-.btn-lg
+.btn-lg //cta, recherche
     font-weight: bold
     height: 2.75rem //44px
     width: 13.75rem //220px (44*5)
+
+.btn-thin //editer profil, filtrer, modifier recherche
+    height: 2.12rem //34px
+    width: 12.75rem //204px (34*6)
 
 .cta
     @include serif-font
@@ -306,52 +393,17 @@ footer
         scale: 1.1
 
 // -------------------------------------------------
-// CARDS
-// -------------------------------------------------
-
-// "crd" à la place de "card" pour ne pas interférer avec les classes card bootstrap
-@mixin crd-base
-    // margin:
-    // padding:
-    // border-radius:  
-
-.crd-normal
-    // border:
-    @include crd-base
-    &__svg
-        color: $grey-secondary-car
-    &__button
-        color: #ffffff
-        background-color: $brown-secondary
-
-.crd-eco
-    // border:
-    @include crd-base
-    &__svg
-        color: $green-secondary-car
-    &__button
-        color: #ffffff
-        background-color: $green-secondary
-
-// -------------------------------------------------
 // PROFIL PICTURES
 // -------------------------------------------------
 
 .profil-picture
     border-radius: 50%
     object-fit: cover
-    min-width: 44px
-    min-height: 44px
+    flex: 0 0 auto //empêcher l'image de se déformer
     &__header
-        max-width: auto
-        max-height: 80%
-    // &__menu
-    //     width: 
-    //     height: 
-    // &__profil
-    //     width: 
-    //     height: 
-    // &__card
-    //     width: 
-    //     height: 
-
+        width: 1.88rem
+    &__side-menu
+        width: 6rem 
+    &__profil
+        width: 7rem
+        border: $brown-secondary 1px solid

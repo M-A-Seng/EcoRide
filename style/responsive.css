@@ -3,16 +3,22 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Verdana, Arial, sans-serif;
   word-spacing: 2px;
   font-weight: normal;
   font-style: normal;
   background-color: #707E66;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  height: 100%;
+  flex: 1;
   background-color: #E7EBE3;
   color: #000000;
   padding: 3rem 0;
@@ -47,13 +53,15 @@ small {
   font-size: 0.87rem;
 }
 
+.bold {
+  font-weight: bold;
+}
+
 header, footer {
   background-color: #3C3730;
 }
 
 header {
-  position: sticky;
-  top: 0;
   height: 3rem;
   width: 100%;
   display: flex;
@@ -65,7 +73,6 @@ header {
 .header-icon {
   cursor: pointer;
   width: 1.88rem;
-  height: auto;
   flex: 0 0 auto;
   margin: 0 1rem;
 }
@@ -79,21 +86,39 @@ header {
   display: block;
 }
 .ecoride-logo__header {
-  max-width: 7.5rem;
+  width: 7.5rem;
 }
 .ecoride-logo__footer, .ecoride-logo__side-menu--big {
   width: 13rem;
 }
 .ecoride-logo__side-menu--small {
   width: 9rem;
+  position: relative;
+  top: -2rem;
+}
+
+.credit-banner {
+  width: 100%;
+  height: 1.5rem;
+  background-color: #91AE7B;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.credit-banner p {
+  font-size: 1rem;
+  text-align: left;
+  margin-left: 1rem;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
 }
 
 footer {
   width: 100%;
   padding: 2rem 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
 }
 footer a:link {
   color: #ffffff;
@@ -113,11 +138,12 @@ footer p {
 }
 
 .footer-links-div {
-  margin: 1rem 2rem;
+  margin: 1rem auto;
   width: 100%;
+  text-align: center;
 }
 .footer-links-div a {
-  margin: 0.25rem 0;
+  margin: 0.5rem auto;
 }
 
 .dropdown-menu {
@@ -136,7 +162,7 @@ footer p {
 }
 .dropdown-item:hover {
   color: rgb(255, 255, 255);
-  background-color: #8c6a40;
+  background-color: #7a6852;
 }
 .dropdown-item:focus {
   color: white;
@@ -158,6 +184,23 @@ footer p {
 #side-menu {
   height: 100%;
   background-color: #3C3730;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#side-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.side-menu-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #E7EBE3;
+}
+.side-menu-header p {
+  line-height: 1.5rem;
+  margin: auto;
 }
 
 #side-menu, .bottom-items {
@@ -181,7 +224,7 @@ footer p {
 }
 .side-menu-item:hover {
   color: rgb(255, 255, 255);
-  background-color: #8c6a40;
+  background-color: #7a6852;
 }
 .side-menu-item:focus {
   color: white;
@@ -201,8 +244,10 @@ footer p {
 }
 
 .bottom-items {
-  position: fixed;
-  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .close-button {
@@ -226,7 +271,7 @@ footer p {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background: url(../img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+  background: url(../img/images/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
   background-size: cover;
 }
 .hero h1, .hero p {
@@ -249,6 +294,46 @@ footer p {
   width: 6.88rem;
   height: 6.88rem;
   margin: 2rem 1rem 0;
+}
+
+#innerProfilSection {
+  width: 100%;
+  height: 2.75rem;
+  margin: 2rem 0 0 0;
+  background: transparent;
+}
+#innerProfilSection button {
+  width: 50%;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  border: #3C3730 1px solid;
+  background-color: #E7EBE3;
+}
+#innerProfilSection .profilSection-active {
+  background-color: #3C3730;
+  color: #ffffff;
+  text-decoration: underline;
+}
+
+#mesCovoiturages, #monVoitures {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background-color: #3C3730;
+  color: #ffffff;
+}
+#mesCovoiturages p, #monVoitures p {
+  margin: 0;
+}
+
+.profil-content p {
+  margin: auto;
+}
+
+.star-rating img {
+  width: 1rem;
+  margin: 0 0.25rem;
 }
 
 .btn {
@@ -281,11 +366,24 @@ footer p {
   background: #d59945;
   box-shadow: 0 0.3rem 1rem 0.4rem rgba(0, 0, 0, 0.2);
 }
+.btn__light {
+  background: #B9C4AE;
+  border: #5d6b4e 1px solid;
+}
+.btn__light:hover, .btn__light:active {
+  border: 2px #4a563e solid;
+  background: #b9d0a2;
+}
 
 .btn-lg {
   font-weight: bold;
   height: 2.75rem;
   width: 13.75rem;
+}
+
+.btn-thin {
+  height: 2.12rem;
+  width: 12.75rem;
 }
 
 .cta {
@@ -300,32 +398,21 @@ footer p {
   scale: 1.1;
 }
 
-.crd-normal__svg {
-  color: #666554;
-}
-.crd-normal__button {
-  color: #ffffff;
-  background-color: #5E564C;
-}
-
-.crd-eco__svg {
-  color: #68745E;
-}
-.crd-eco__button {
-  color: #ffffff;
-  background-color: #495341;
-}
-
 .profil-picture {
   border-radius: 50%;
   -o-object-fit: cover;
      object-fit: cover;
-  min-width: 44px;
-  min-height: 44px;
+  flex: 0 0 auto;
 }
 .profil-picture__header {
-  max-width: auto;
-  max-height: 80%;
+  width: 1.88rem;
+}
+.profil-picture__side-menu {
+  width: 6rem;
+}
+.profil-picture__profil {
+  width: 7rem;
+  border: #5E564C 1px solid;
 }
 
 @media screen and (min-width: 768px) {
@@ -340,15 +427,14 @@ footer p {
     text-align: justify;
     line-height: 1.7rem;
   }
-  #side-menu, .bottom-items {
-    width: 50%;
-    max-width: 21.88rem;
-  }
   .side-menu-item {
     padding: 0 0 0 2.5rem;
   }
   .dropdown-menu {
     font-size: 1.06rem;
+  }
+  .side-menu-header p {
+    text-align: center;
   }
   .ecoride-logo__header {
     max-width: 8.5rem;
@@ -361,13 +447,14 @@ footer p {
   }
   .header-icon {
     width: 2.38rem;
+    height: 2.38rem;
     margin: 0 1.5rem;
   }
   .footer-links-div {
     margin: 1.5rem 0 1rem;
   }
   .hero {
-    background: url(../img/pictures/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+    background: url(../img/images/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
     background-size: cover;
   }
   .btn-lg {
@@ -400,10 +487,6 @@ footer p {
   .dropdown-item:hover, .side-menu-item:hover {
     color: rgb(255, 255, 255);
   }
-  #side-menu, .bottom-items {
-    width: 30%;
-    max-width: 21.88rem;
-  }
   .side-menu-item {
     padding: 0 0 0 3rem;
   }
@@ -411,7 +494,6 @@ footer p {
     height: 3.5rem;
   }
   .header-icon {
-    width: 2.75rem;
     margin: 0 3rem;
   }
   footer {
@@ -422,7 +504,7 @@ footer p {
   }
   .hero {
     height: 90vh;
-    background: url(../img/pictures/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
+    background: url(../img/images/hero-large_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
     background-size: cover;
   }
   .homepage-badge-img-1 {
