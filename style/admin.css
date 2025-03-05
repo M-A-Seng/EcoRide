@@ -335,4 +335,26 @@ footer .ecoride-logo__footer {
 }
 .cta:hover {
   scale: 1.1;
-}/*# sourceMappingURL=style.css.map */
+}
+
+#adminMode header, #adminMode footer, #adminMode .dropdown-menu, #adminMode #side-menu {
+  background-color: #393f35;
+}
+
+#adminMode .dropdown-item, #adminMode .side-menu-item {
+  background-color: #515b49;
+}
+#adminMode .dropdown-item:hover, #adminMode .dropdown-item:hover, #adminMode .side-menu-item:hover, #adminMode .side-menu-item:hover {
+  background-color: #59694d;
+}
+
+#adminMode .active {
+  background-color: #3C3730;
+}
+#adminMode .active:hover {
+  background-color: #3C3730;
+}
+
+#adminMode .ecoride-logo {
+  opacity: 80%;
+}/*# sourceMappingURL=admin.css.map */

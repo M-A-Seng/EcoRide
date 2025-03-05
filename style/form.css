@@ -3,29 +3,30 @@
   padding: 0;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Verdana, Arial, sans-serif;
   word-spacing: 2px;
   font-weight: normal;
   font-style: normal;
   background-color: #707E66;
+  display: flex;
+  flex-direction: column;
 }
 
 main {
-  height: 100%;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
   background-color: #E7EBE3;
   color: #000000;
-  padding: 3rem 0;
+  padding: 3rem 0 0 0;
 }
 
-p {
-  width: 90%;
-  text-align: center;
-  line-height: 1.6rem;
-  margin: 0.75rem 0;
-}
-
-h1, h2, h3 {
+h1, h2 {
   font-family: Georgia, Times, serif;
   font-weight: normal;
   font-style: normal;
@@ -42,77 +43,118 @@ h1 {
   letter-spacing: 0.1rem;
 }
 
+p {
+  width: 90%;
+  text-align: center;
+  line-height: 1.6rem;
+  margin: 0.75rem 0;
+}
+
+small {
+  display: inline-block;
+  font-size: 0.87rem;
+}
+
+.bold {
+  font-weight: bold;
+}
+
 header, footer {
   background-color: #3C3730;
 }
 
 header {
-  position: sticky;
-  top: 0;
   height: 3rem;
   width: 100%;
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+}
+
+.header-div-left, .header-div-right {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.header-div-left {
+  justify-content: start;
+}
+
+.header-div-right {
+  justify-content: end;
 }
 
 .header-icon {
   cursor: pointer;
-  width: 1.88rem;
-  height: auto;
-  flex: 0 0 auto;
-  margin: 0 1rem;
+  margin: 0 0.5rem;
 }
-.header-icon__color {
-  fill: #ffffff;
+
+.menu-icon {
+  height: 2.3rem;
+}
+
+.search-icon, .modo-icon {
+  height: 1.5rem;
+}
+
+.notif-icon {
+  height: 1.8rem;
 }
 
 .ecoride-logo {
-  margin: 0 auto;
-  flex: 0 0 auto;
+  margin: auto;
   display: block;
 }
 .ecoride-logo__header {
-  max-width: 7.5rem;
+  width: 7rem;
 }
 .ecoride-logo__footer, .ecoride-logo__side-menu--big {
   width: 13rem;
 }
 .ecoride-logo__side-menu--small {
   width: 9rem;
+  position: relative;
+  top: -2rem;
+}
+
+.fixed {
+  position: fixed;
+  top: 0;
+  width: 100%;
 }
 
 footer {
   width: 100%;
   padding: 2rem 10%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-footer a:link {
   color: #ffffff;
-  text-decoration: none;
 }
-footer a:hover {
-  text-decoration: underline;
-}
-footer a:active {
-  color: #CB974F;
-}
-footer a:visited {
-  color: #CB974F;
-}
-footer p {
-  width: 100%;
+footer .ecoride-logo__footer {
+  margin-bottom: 1rem;
 }
 
 .footer-links-div {
-  margin: 1rem 2rem;
+  margin: 2rem auto 1rem;
   width: 100%;
+  text-align: center;
 }
 .footer-links-div a {
-  margin: 0.25rem 0;
+  margin: 0.5rem 1rem;
+}
+.footer-links-div a:link {
+  color: #ffffff;
+  text-decoration: none;
+}
+.footer-links-div a:hover {
+  text-decoration: underline;
+}
+.footer-links-div a:active {
+  color: #CB974F;
+}
+.footer-links-div a:visited {
+  color: #CB974F;
 }
 
 .dropdown-menu {
@@ -131,7 +173,7 @@ footer p {
 }
 .dropdown-item:hover {
   color: rgb(255, 255, 255);
-  background-color: #8c6a40;
+  background-color: #7a6852;
 }
 .dropdown-item:focus {
   color: white;
@@ -153,6 +195,23 @@ footer p {
 #side-menu {
   height: 100%;
   background-color: #3C3730;
+  overflow: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+#side-menu::-webkit-scrollbar {
+  display: none;
+}
+
+.side-menu-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #E7EBE3;
+}
+.side-menu-header p {
+  line-height: 1.5rem;
+  margin: auto;
 }
 
 #side-menu, .bottom-items {
@@ -176,7 +235,7 @@ footer p {
 }
 .side-menu-item:hover {
   color: rgb(255, 255, 255);
-  background-color: #8c6a40;
+  background-color: #7a6852;
 }
 .side-menu-item:focus {
   color: white;
@@ -196,8 +255,10 @@ footer p {
 }
 
 .bottom-items {
-  position: fixed;
-  bottom: 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: end;
 }
 
 .close-button {
@@ -212,38 +273,6 @@ footer p {
   color: #ffffff;
   width: 2rem;
   height: 2rem;
-}
-
-.hero {
-  width: 100%;
-  height: 50vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  background: url(../img/pictures/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll;
-  background-size: cover;
-}
-.hero h1, .hero p {
-  margin: 0;
-}
-.hero h1 {
-  text-shadow: 0 0 0.5rem #000000;
-  margin: 0;
-}
-
-.homepage-badge-img-1 {
-  fill: #91AE7B;
-  width: 8.75rem;
-  height: 8.75rem;
-  flex: 0 0 auto;
-  margin: 1.5rem 1rem 0;
-}
-
-.homepage-badge-img-2 {
-  width: 6.88rem;
-  height: 6.88rem;
-  margin: 2rem 1rem 0;
 }
 
 .btn {
@@ -276,11 +305,24 @@ footer p {
   background: #d59945;
   box-shadow: 0 0.3rem 1rem 0.4rem rgba(0, 0, 0, 0.2);
 }
+.btn__light {
+  background: #B9C4AE;
+  border: #5d6b4e 1px solid;
+}
+.btn__light:hover, .btn__light:active {
+  border: 2px #4a563e solid;
+  background: #b9d0a2;
+}
 
 .btn-lg {
   font-weight: bold;
   height: 2.75rem;
   width: 13.75rem;
+}
+
+.btn-thin {
+  height: 2.12rem;
+  width: 12.75rem;
 }
 
 .cta {
@@ -293,34 +335,6 @@ footer p {
 }
 .cta:hover {
   scale: 1.1;
-}
-
-.crd-normal__svg {
-  color: #666554;
-}
-.crd-normal__button {
-  color: #ffffff;
-  background-color: #5E564C;
-}
-
-.crd-eco__svg {
-  color: #68745E;
-}
-.crd-eco__button {
-  color: #ffffff;
-  background-color: #495341;
-}
-
-.profil-picture {
-  border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
-  min-width: 44px;
-  min-height: 44px;
-}
-.profil-picture__header {
-  max-width: auto;
-  max-height: 80%;
 }
 
 form {

@@ -1,0 +1,53 @@
+// ---------------------------------------------------------
+    // Feuille de style réservée aux pages dédiées au personnel de Ecoride.
+    // A pour but de distinguer le mode normal (visiteur, utilisateur),
+    // et le mode modération (administrateurs et employés).
+// ---------------------------------------------------------
+
+@use 'style'
+@use 'sass:color'
+
+// ---------------------------------------------------------
+    // VARIABLES
+// ---------------------------------------------------------
+
+// header, footer, menu background,   
+$green-primary: #393f35
+// menu links default
+$green-secondary: #515b49
+// main background
+$light-primary: #E7EBE3
+// active navigation links 
+$brown-primary: #3C3730  
+
+// titres
+@mixin serif-font
+    font-family: Georgia, Times, serif
+    font-weight: normal
+    font-style: normal
+// textes
+@mixin sans-serif-font
+    font-family: Verdana, Arial, sans-serif
+    word-spacing: 2px
+    font-weight: normal
+    font-style: normal
+
+// -------------------------------------------------
+    // GLOBAL
+// -------------------------------------------------
+
+#adminMode header, #adminMode footer, #adminMode .dropdown-menu, #adminMode #side-menu
+    background-color: $green-primary
+
+#adminMode .dropdown-item, #adminMode .side-menu-item
+    background-color: $green-secondary
+    &:hover, &:hover
+        background-color: color.scale($green-secondary, $saturation: 5%, $lightness: 5%)
+
+#adminMode .active
+    background-color: $brown-primary
+    &:hover
+        background-color: $brown-primary
+
+#adminMode .ecoride-logo
+    opacity: 80%

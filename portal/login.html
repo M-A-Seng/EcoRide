@@ -95,17 +95,17 @@
             <div class="form-element">
                 <label for="email" class="form-label">Email:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="error-email" placeholder="exemple@mail.com" maxlength="150">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="error-email" placeholder="exemple@mail.com" maxlength="150" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="error-email" class="form-text">Adresse email invalide</small>
             </div>
             <div class="form-element">
                 <label for="password" class="form-label">Mot de passe:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="error-password" maxlength="50">
-                    <img class="eye-icon-password" id="eyeIconPassword" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="error-password"  minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£:'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£:'_-`~{}|<>+=[\]\\/]{10,}">
+                    <img class="eye-icon-password" id="eyeIconPassword" src="../img/icons/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="error-password" class="form-text">Mot de passe invalide</small>
             </div>

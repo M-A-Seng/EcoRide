@@ -16,7 +16,7 @@ let eyePasswordConfirm = document.getElementById("eyeIconPswConfirmation");
 // expressions régulières
 const nameRegex = /^(?=(.*[a-zA-ZÀ-ÿ].*){2})[A-Za-zÀ-ÿ\s-]+$/; //accepte lettres minuscules, majuscules, accentuées, espace et tirets. Minimum 2 lettres alphabetique.
 const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/; //doit contenir au moins un caractère, suivit d'un @, suivit d'au moins un caractère, suivit d'un point (.), suivit d'au moins 2 lettres.
-const passwordRegex = /^(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£":'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£":'_-`~{}|<>+=[\]\\/]{9,}$/; // minimum 9 caractères, 1 minuscule, 1 majuscule, 1 chiffre, 1 symbole
+const passwordRegex = /^(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£":'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£":'_-`~{}|<>+=[\]\\/]{10,}$/; // minimum 10 caractères, 1 minuscule, 1 majuscule, 1 chiffre, 1 symbole
 
 //__________________________________________________
 // RETOURS VISUELS (couleur, icon) SAISIES UTILISATEUR

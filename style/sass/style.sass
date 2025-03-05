@@ -73,14 +73,16 @@ body
     flex-direction: column
 
 main
+    display: flex
+    flex-direction: column
     flex: 1
     background-color: $light-primary
     color: #000000
-    padding: 3rem 0
+    padding: 7rem 0 0 0
 
 //html body height 100% + body flexbox + main flex: 1; permet de garder le footer en bas de page
 
-h1, h2, h3
+h1, h2
     @include serif-font
     font-weight: bold
     text-align: center
@@ -119,22 +121,33 @@ header
     display: flex
     flex-direction: row
     align-items: center
-    justify-content: space-around
+    justify-content: space-between
+
+.header-div-left, .header-div-right
+    flex: 1
+    display: flex
+    flex-direction: row
+    align-items: center
+.header-div-left
+    justify-content: start
+.header-div-right
+    justify-content: end
 
 .header-icon
     cursor: pointer
-    width: 1.88rem //30px (min 24px | max 36px)
-    flex: 0 0 auto //empêcher l'image de se déformer
-    margin: 0 1rem
-    &__color
-        fill: #ffffff
+    margin: 0 0.5rem
+.menu-icon
+    height: 2.3rem
+.search-icon, .modo-icon
+    height: 1.5rem
+.notif-icon
+    height: 1.8rem
 
 .ecoride-logo
-    margin: 0 auto
-    flex: 0 0 auto //empêcher l'image de se déformer
+    margin: auto
     display: block
     &__header
-        width: 7.5rem
+        width: 7rem
     &__footer, &__side-menu--big
         width: 13rem
     &__side-menu--small
@@ -142,25 +155,24 @@ header
         position: relative
         top: -2rem
 
-.credit-banner
-    width: 100%
-    height: 1.5rem
-    background-color: $green-primary
-    display: flex
-    flex-direction: row
-    align-items: center
-    & p
-        font-size: 1rem
-        text-align: left
-        margin-left: 1rem
-
-.sticky //header
-    position: sticky
+.fixed //header
+    position: fixed
     top: 0
+    width: 100%
 
 footer
     width: 100%
     padding: 2rem 10%
+    color: #ffffff
+    & .ecoride-logo__footer
+        margin-bottom: 1rem 
+
+.footer-links-div
+    margin: 2rem auto 1rem
+    width: 100%
+    text-align: center
+    & a
+        margin: 0.5rem 1rem
     & a:link
         color: #ffffff
         text-decoration: none
@@ -170,15 +182,6 @@ footer
         color: $orange-primary
     & a:visited
         color: $orange-primary
-    & p
-        width: 100%
-
-.footer-links-div
-    margin: 1rem auto
-    width: 100%
-    text-align: center
-    & a
-        margin: 0.5rem auto
 
 // -------------------------------------------------
 // SIDE MENU AND DROPDOWN
@@ -273,75 +276,6 @@ footer
     height: 2rem  
 
 // -------------------------------------------------
-// MAIN
-// -------------------------------------------------
-
-.hero
-    width: 100%
-    height: 50vh
-    display: flex
-    flex-direction: column
-    justify-content: center
-    align-items: center
-    background: url(../img/images/hero-small_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
-    background-size: cover
-    & h1, p
-        margin: 0
-    & h1
-        text-shadow: 0 0 0.5rem #000000
-        margin: 0
-
-.homepage-badge-img-1
-    fill: #91AE7B
-    width: 8.75rem //140px
-    height: 8.75rem //140px
-    flex: 0 0 auto //empêcher l'image de se déformer
-    margin: 1.5rem 1rem 0
-
-.homepage-badge-img-2
-    width: 6.88rem //110px
-    height: 6.88rem //110px
-    margin: 2rem 1rem 0
-
-#innerProfilSection
-    width: 100%
-    height: 2.75rem //44px
-    margin: 2rem 0 0 0
-    background: transparent
-    & button
-        width: 50%
-        height: 100%
-        margin: 0
-        text-align: center
-        border: $brown-primary 1px solid
-        background-color: $light-primary
-    & .profilSection-active
-        background-color: $brown-primary
-        color: #ffffff
-        text-decoration: underline
-
-#mesCovoiturages, #monVoitures
-    width: 100%
-    height: 100%
-    margin: 0
-    background-color: $brown-primary
-    color: #ffffff
-    & p
-        margin: 0
-
-
-// -------------------------------------------------
-// ESPACE UTILISATEUR
-// -------------------------------------------------
-
-.profil-content p
-    margin: auto
-
-.star-rating img
-    width: 1rem
-    margin: 0 0.25rem
-
-// -------------------------------------------------
 // BUTTONS
 // -------------------------------------------------
 
@@ -391,19 +325,3 @@ footer
     border-radius: 0.5rem
     &:hover
         scale: 1.1
-
-// -------------------------------------------------
-// PROFIL PICTURES
-// -------------------------------------------------
-
-.profil-picture
-    border-radius: 50%
-    object-fit: cover
-    flex: 0 0 auto //empêcher l'image de se déformer
-    &__header
-        width: 1.88rem
-    &__side-menu
-        width: 6rem 
-    &__profil
-        width: 7rem
-        border: $brown-secondary 1px solid

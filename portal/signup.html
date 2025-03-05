@@ -14,7 +14,7 @@
     <link rel="stylesheet" type="text/css" href="../style/style.css">
     <link rel="stylesheet" type="text/css" href="../style/responsive.css">
     <link rel="stylesheet" type="text/css" href="../style/form.css">
-    <!--STYLES-->
+    <!--SCRIPTS-->
     <script defer src="../script/form.js"></script>
     <script defer src="../script/signup.js"></script>
 </head>
@@ -98,35 +98,35 @@
         <h1>Inscription</h1>
         <form action="#" method="post" id="form">
             <div class="form-element">
-                <label for="lastName" class="form-label">Nom:</label>
-                <div class="d-flex align-items-center">
-                    <input required type="text" class="form-control name-input" name="Nom" id="lastName" maxlength="50">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
-                </div>
-                <small id="note-lastName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés. Votre nom doit faire minimum 2 caractères.</small>
-            </div>
-            <div class="form-element">
                 <label for="firstName" class="form-label">Prénom:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="text" class="form-control name-input" name="Prénom" id="firstName" maxlength="50">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                    <input required type="text" class="form-control name-input" name="Prénom" id="firstName" maxlength="50" pattern="(?=(.*[a-zA-ZÀ-ÿ].*){2})[A-Za-zÀ-ÿ\s-]+">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
-                <small id="note-firstName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés. Votre Prénom doit faire minimum 2 caractères.</small>
+                <small id="note-firstName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés.</small>
+            </div>
+            <div class="form-element">
+                <label for="lastName" class="form-label">Nom:</label>
+                <div class="d-flex align-items-center">
+                    <input type="text" class="form-control name-input" name="Nom" id="lastName" maxlength="50" placeholder="(facultatif)" pattern="(?=(.*[a-zA-ZÀ-ÿ].*){2})[A-Za-zÀ-ÿ\s-]+">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                </div>
+                <small id="note-lastName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés.</small>
             </div>
             <div class="form-element">
                 <label for="email" class="form-label">Email:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" maxlength="150">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" maxlength="150" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="note-email" class="form-text text-muted">Veuillez utiliser une adresse email valide.</small>
             </div>
             <div class="form-element">
                 <label for="password" class="form-label">Mot de passe:</label>
                 <div class="d-flex align-items-center">
-                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="note-password" maxlength="50">
-                    <img class="eye-icon-password" id="eyeIconPassword" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="note-password" minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£:'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£:'_-`~{}|<>+=[\]\\/]{10,}">
+                    <img class="eye-icon-password" id="eyeIconPassword" src="../img/icons/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <!--Feedback de saisie de mot de passe sécurisé-->
                 <div id="note-password" class="password-checklist">
@@ -134,15 +134,15 @@
                     <p class="uppercaseFeedback"><span class="js-uppercaseCheck js-display-check"></span>1 lettre majuscule minimum</p>
                     <p class="numberFeedback"><span class="js-numberCheck js-display-check"></span>1 chiffre minimum</p>
                     <p class="symbolFeedback"><span class="js-symbolCheck js-display-check"></span>1 symbole minimum</p>
-                    <p class="minLengthFeedback"><span class="js-minLengthCheck js-display-check"></span>9 caractères minimum</p>
+                    <p class="minLengthFeedback"><span class="js-minLengthCheck js-display-check"></span>10 caractères minimum</p>
                 </div>
             </div>
             <div class="form-element">
                 <label for="passwordConfirmation" class="form-label">Confirmez votre mot de passe:</label>
                 <div class="password-input">
-                    <input required type="password" class="form-control" name="Confirmation mot de passe" id="passwordConfirmation" aria-describedby="note-confirmPassword" maxlength="50">
-                    <img class="eye-icon-password" id="eyeIconPswConfirmation" src="../img/pictures/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
-                    <img class="icon-input js-display" src="../img/pictures/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
+                    <input required type="password" class="form-control" name="Confirmation mot de passe" id="passwordConfirmation" aria-describedby="note-confirmPassword" minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£:'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£:'_-`~{}|<>+=[\]\\/]{10,}">
+                    <img class="eye-icon-password" id="eyeIconPswConfirmation" src="../img/icons/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
+                    <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="note-confirmPassword" class="form-text text-muted">Réécrivez votre mot de passe pour confirmer.</small>
             </div>
@@ -154,7 +154,7 @@
         <hr>
         <div class="d-flex flex-column justify-content-center mt-3 pb-5">
             <p class="m-auto">Vous avez déjà un compte?</p>
-            <a class="d-block m-auto" href="#">Me connecter</a>
+            <a class="d-block m-auto" href="#">Se connecter</a>
         </div>
     </main>
       

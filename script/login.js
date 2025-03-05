@@ -49,11 +49,11 @@ function togglePasswordVisibility() {
     eyePassword.addEventListener('click', () => {
         if (password.type === "password") {
             password.type = "text";
-            eyePassword.src = "../img/pictures/eye-open-icon-blue.svg";
+            eyePassword.src = "../img/icons/eye-open-icon-blue.svg";
             eyePassword.title = "Masquer le mot de passe";
         } else {
             password.type = "password";
-            eyePassword.src = "../img/pictures/eye-slash-icon-grey.svg";
+            eyePassword.src = "../img/icons/eye-slash-icon-grey.svg";
             eyePassword.title = "Afficher le mot de passe";
         }
     });
@@ -62,6 +62,9 @@ togglePasswordVisibility();
 
 //__________________________________________________
 // SOUMISSION FORMULAIRE
+
+// NOTE----------
+    // Cette partie du script appartient à la version démo.
 
 function formSubmission() {
     const form = document.getElementById("form");
@@ -73,12 +76,12 @@ function formSubmission() {
 
         // utilisateur test
         if (email.value.trim() === "demo-admin@ecoride.fr" && password.value.trim() == "ec.206PSW*t") {
-            console.log("The guest has input a demo ID.");
+            console.log("Visitor has input a demo ID.");
             document.body.style.cursor = 'wait';
             submissionButton.disabled = true
             setTimeout(function() {
-                console.log("The guest has been redirected to the demo page for admins.");
-                location.replace("adminDemo.html");
+                console.log("The visitor has been redirected to the demo page for admins.");
+                location.replace("demoAdminUser.html");
                 document.body.style.cursor = 'auto';
             }, 1000); //retard de 1s pour permettre à l'utilisateur de voir le feedback avant de changer de page
 

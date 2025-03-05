@@ -77,7 +77,7 @@ function passwordFeedback() {
     const uppercaseRegex = /[A-ZÀ-ÖØ-ÝŸ]/; //Uniquement les charactère codes majuscule comprenant les accentués français
     const numbersRegex = /[0-9]/; //chiffre
     const symbolsRegex = /[;:!@#$%^&*(),.?{}°§£":'`~{}|<>+=[\]\\/]/; // Caractères spéciaux
-    const minLengthRegex = /^.{9,}$/; //minimum 9 caractères
+    const minLengthRegex = /^.{10,}$/; //minimum 9 caractères
 
     // feedback pour lettre minuscule
     if (lowercaseRegex.test(password.value)) {
@@ -191,7 +191,7 @@ function formSubmission() {
         event.preventDefault();
         form.reset();
         location.reload(); // Recharge la page
-        console.log("No account created, but form submitted successfully!")
+        console.log("No account created, but form submitted successfully! \n Form data has been deleted")
     });
 };
 formSubmission()

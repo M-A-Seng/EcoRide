@@ -46,7 +46,7 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     // ECORIDE LOGOS ----------------------------------
     .ecoride-logo
         &__header
-            max-width: 8.5rem
+            width: 8rem
         &__side-menu--big, &__footer
             width: 14rem
 
@@ -54,9 +54,17 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     header
         height: 3.25rem //52px (optimal 51 < 65px)
     .header-icon
-        width: 2.38rem //38px (min 28px | max 48px)
-        height: 2.38rem
-        margin: 0 1.5rem
+        margin: 0 0.75rem
+    .menu-icon
+        height: 2.4rem
+    .search-icon, .modo-icon
+        height: 1.7rem
+    .notif-icon
+        height: 2.1rem
+    .header-div-left
+        margin-left: 1rem
+    .header-div-right
+        margin-right: 1rem
 
     // FOOTER --------------------------------------------
     .footer-links-div
@@ -66,6 +74,8 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     .hero
         background: url(../img/images/hero-medium_patrick-tomasso-5hvn-2WW6rY-unsplash.jpg) center no-repeat scroll
         background-size: cover
+    .profil-content p
+        text-align: center
 
     // BUTTONS ------------------------------------
     .btn-lg
@@ -81,7 +91,7 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     body
         font-size: $desktop-font-size-body
     main
-        margin: 1rem 4rem 2rem
+        margin: 6rem 4rem 2rem
     h1
         font-size: 3rem //48px (max 56px)
     p
@@ -89,7 +99,7 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     // ECORIDE LOGOS ------------------------------------
     .ecoride-logo
         &__header
-            max-width: 9.5rem
+            width: 9rem
         &__side-menu--big, &__footer
             width: 15rem
     
@@ -105,7 +115,11 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     header
         height: 3.5rem //56px (optimal 56 < 75 px)
     .header-icon
-        margin: 0 3rem
+        margin: 0 1rem
+    .header-div-left
+        margin-left: 2rem
+    .header-div-right
+        margin-right: 2rem
     
     // FOOTER ----------------------------------------
     footer
@@ -129,3 +143,21 @@ $desktop-font-size-body: 1.12rem //18px (optimal 16px < 20px)
     // BUTTONS ------------------------------------------
     .cta
         font-size: 1.75rem
+
+// -------------------------------------------------
+// HEADER ICON
+// -------------------------------------------------
+
+//pour les tout petits appareils afin que les icons ne disparaissent pas hors de l'écran
+
+@media screen and (max-width: 350px) 
+    .ecoride-logo__header
+        display: none
+    #side-menu, .bottom-items
+        width: 100%
+    .close-button //side menu
+        transform: translateX(-2rem)  
+
+@media screen and (max-width: 230px) 
+    .modo-icon
+        display: none
