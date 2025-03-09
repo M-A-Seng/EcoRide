@@ -6,40 +6,44 @@
     <meta charset="UTF-8">
     <meta name="description" content="EcoRide est une plateforme française de covoiturage engagée dans la création de trajets plus écologiques et solidaires. En offrant des solutions de transport responsables et adaptées à tous types de déplacements, elle favorise une mobilité durable et respectueuse de l'environnement.">
     <meta name="keywords" content="Covoiturage, Ecologie, Trajet, Partager voiture, "> 
-    <link rel="icon" type="image/svg" href="../img/logo/icon.svg">
+    <link rel="icon" type="image/svg" href="../img/logo/favicon.svg">
     <!--Bootstrap-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <!--STYLES-->
     <link rel="stylesheet" type="text/css" href="../style/style.css">
-    <link rel="stylesheet" type="text/css" href="../style/responsive.css">
     <link rel="stylesheet" type="text/css" href="../style/form.css">
+    <link rel="stylesheet" type="text/css" href="../style/responsive.css">
     <!--SCRIPTS-->
     <script defer src="../script/form.js"></script>
     <script defer src="../script/signup.js"></script>
 </head>
 
 <body>
-    <header>
-        <!--Burger menu icon-->
-        <svg class="header-icon" data-bs-toggle="offcanvas" href="#side-menu" aria-controls="side-menu" type="button" role="button" width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Ouvrir le menu de navigation latéral">
-            <path class="header-icon__color" d="M3.5625 6C3.5625 5.58579 3.89829 5.25 4.3125 5.25H20.3125C20.7267 5.25 21.0625 5.58579 21.0625 6C21.0625 6.41421 20.7267 6.75 20.3125 6.75L4.3125 6.75C3.89829 6.75 3.5625 6.41422 3.5625 6Z" fill="#323544"/>
-            <path class="header-icon__color" d="M3.5625 18C3.5625 17.5858 3.89829 17.25 4.3125 17.25L20.3125 17.25C20.7267 17.25 21.0625 17.5858 21.0625 18C21.0625 18.4142 20.7267 18.75 20.3125 18.75L4.3125 18.75C3.89829 18.75 3.5625 18.4142 3.5625 18Z" fill="#323544"/>
-            <path class="header-icon__color" d="M4.3125 11.25C3.89829 11.25 3.5625 11.5858 3.5625 12C3.5625 12.4142 3.89829 12.75 4.3125 12.75L20.3125 12.75C20.7267 12.75 21.0625 12.4142 21.0625 12C21.0625 11.5858 20.7267 11.25 20.3125 11.25L4.3125 11.25Z" fill="#323544"/>
-        </svg>   
-        <!--Logo-->
-        <img class="ecoride-logo ecoride-logo__header" src="../img/logo/logo-without-slogan.svg" alt="Logo EcoRide" aria-hidden="true">
-        <!--User icon-->
-        <div class="dropdown">
-            <svg class="header-icon dropdown-toggle" type="button" role="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#323544" viewBox="0 0 24 24" aria-label="Ouvrir ou fermer la liste déroulante">
-                <path class="header-icon__color" fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
-            </svg> 
-            <div class="dropdown-menu" id="dropdown-menu-override" aria-labelledby="triggerId">
-                <a class="dropdown-item d-flex align-items-center" href="#" role="link">Connexion</a>
-                <a class="dropdown-item d-flex align-items-center active" href="#"  role="link">Inscription</a>
+    <div class="fixed">
+        <div class="credit-banner" style="background-color:#f3b271;justify-content:center;"><p style="text-align:center;font-size:0.87rem;margin:auto;">Plateforme en développement</p></div>    
+        <header>
+            <div class="header-div-left">
+                <!--Burger menu icon-->
+                <img class="header-icon menu-icon" data-bs-toggle="offcanvas" href="#side-menu" aria-controls="side-menu" type="button" role="button" src="../img/icons/menu-icon-white.svg" alt="Icon 'menu'" aria-label="Ouvrir le menu de navigation latéral">
+                <img class="header-icon search-icon" src="../img/icons/search-icon-white.svg" alt="Icon 'loupe' de recherche">    
             </div>
-        </div>           
-    </header>
+            <!--Logo-->
+            <img class="ecoride-logo ecoride-logo__header" src="../img/logo/logo-without-slogan.svg" alt="Logo EcoRide" aria-hidden="true">
+            <div class="header-div-right">
+                <!--User icon-->
+                <div class="dropdown">
+                    <svg class="header-icon user-icon dropdown-toggle" type="button" role="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" xmlns="http://www.w3.org/2000/svg" fill="#ffffff" viewBox="0 0 24 24" aria-label="Ouvrir ou fermer la liste déroulante">
+                        <path class="header-icon__color" fill-rule="evenodd" d="M12 4a4 4 0 1 0 0 8 4 4 0 0 0 0-8Zm-2 9a4 4 0 0 0-4 4v1a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2v-1a4 4 0 0 0-4-4h-4Z" clip-rule="evenodd"/>
+                    </svg> 
+                    <div class="dropdown-menu" id="dropdown-menu-override" aria-labelledby="triggerId">
+                        <a class="dropdown-item d-flex align-items-center" href="login.html" role="link">Connexion</a>
+                        <a class="dropdown-item d-flex align-items-center" href="signup.html"  role="link">Inscription</a>
+                    </div>
+                </div>
+            </div>
+        </header>
+    </div>
 
     <!--Menu latéral gauche-->
     <nav class="offcanvas offcanvas-start" tabindex="-1" role="navigation" id="side-menu">
@@ -60,13 +64,13 @@
         </div>
         <hr><!--Sidebar body (links)-->
         <div>
-            <a href="#" class="side-menu-item" role="link">Connexion</a>
-            <a href="#" class="side-menu-item active" role="link">Inscription</a>
+            <a href="login.html" class="side-menu-item" role="link">Connexion</a>
+            <a href="signup.html" class="side-menu-item active" role="link">Inscription</a>
             <hr>
         </div>
         <div>
             <div class=""> <!--Ne pas oublier d'enlever d-none pour dev backend-->
-                <a href="#" class="side-menu-item" role="link">Accueil</a>
+                <a href="../index.html" class="side-menu-item" role="link">Accueil</a>
                 <a href="#" class="d-none side-menu-item" role="link">Profil</a>
                 <a href="#" class="d-none side-menu-item" role="link">Notifications</a>
                 <a href="#" class="side-menu-item" role="link">Trouver un covoiturage</a>
@@ -88,19 +92,19 @@
         </div>
     </nav>
 
-    <main>
-        <div class="message"> <!--Supprimer ce block une fois inutile-->
-            <p>L'inscription à notre plateforme en développement n'est pas encore disponible.</p>
-            <p>Vous êtes libre de tester le formulaire. Vos données ne sont pas enregistrées et sont automatiquement détruites à la soumission du formulaire</p>
-            <p>Nous serions heureux de vous accueillir dès que possible.</p>
-            <p>À très bientôt sur EcoRide!</p>
+    <main id="main-portal">
+        <div style="color:#393632;"> <!--Supprimer ce block une fois inutile-->
+            <p class="m-auto">L'inscription à notre plateforme en développement n'est pas encore disponible.</p>
+            <p class="m-auto">Vous êtes libre de tester le formulaire. Vos données ne sont pas enregistrées et sont automatiquement détruites à la soumission du formulaire</p>
+            <p class="m-auto">Nous serions heureux de vous accueillir dès que possible.</p>
+            <p class="m-auto">À très bientôt sur EcoRide!</p>
         </div>
         <h1>Inscription</h1>
         <form action="#" method="post" id="form">
             <div class="form-element">
-                <label for="firstName" class="form-label">Prénom:</label>
+                <label for="firstName" class="form-label">Prénom:*</label>
                 <div class="d-flex align-items-center">
-                    <input required type="text" class="form-control name-input" name="Prénom" id="firstName" maxlength="50" pattern="(?=(.*[a-zA-ZÀ-ÿ].*){2})[A-Za-zÀ-ÿ\s-]+">
+                    <input required type="text" class="form-control name-input" name="Prénom" id="firstName" maxlength="50" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="note-firstName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés.</small>
@@ -108,23 +112,23 @@
             <div class="form-element">
                 <label for="lastName" class="form-label">Nom:</label>
                 <div class="d-flex align-items-center">
-                    <input type="text" class="form-control name-input" name="Nom" id="lastName" maxlength="50" placeholder="(facultatif)" pattern="(?=(.*[a-zA-ZÀ-ÿ].*){2})[A-Za-zÀ-ÿ\s-]+">
+                    <input type="text" class="form-control name-input" name="Nom" id="lastName" maxlength="50" placeholder="(facultatif)" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="note-lastName" class="form-text note js-display">Seuls les lettres, les espaces et les tirets (-) sont acceptés.</small>
             </div>
             <div class="form-element">
-                <label for="email" class="form-label">Email:</label>
+                <label for="email" class="form-label">Email:*</label>
                 <div class="d-flex align-items-center">
-                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" maxlength="150" pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+                    <input required type="email" class="form-control" name="Email" id="email" aria-describedby="note-email" placeholder="exemple@mail.com" maxlength="150" pattern="[a-zA-Z0-9._%+\-]+@[a-zA-Z0-9.\-]+\.[a-zA-Z]{2,}">
                     <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="note-email" class="form-text text-muted">Veuillez utiliser une adresse email valide.</small>
             </div>
             <div class="form-element">
-                <label for="password" class="form-label">Mot de passe:</label>
+                <label for="password" class="form-label">Mot de passe:*</label>
                 <div class="d-flex align-items-center">
-                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="note-password" minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£:'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£:'_-`~{}|<>+=[\]\\/]{10,}">
+                    <input required type="password" class="form-control" name="Mot de passe" id="password" aria-describedby="note-password" minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*\(\),.?\{\}°§£:'`~\|<>+=\[\]\\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*\(\),.?\{\}°§£:'_\-`~\|<>+=\[\]\\\/]{10,}">
                     <img class="eye-icon-password" id="eyeIconPassword" src="../img/icons/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
                     <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
@@ -138,37 +142,38 @@
                 </div>
             </div>
             <div class="form-element">
-                <label for="passwordConfirmation" class="form-label">Confirmez votre mot de passe:</label>
+                <label for="passwordConfirmation" class="form-label">Confirmez votre mot de passe:*</label>
                 <div class="password-input">
-                    <input required type="password" class="form-control" name="Confirmation mot de passe" id="passwordConfirmation" aria-describedby="note-confirmPassword" minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*(),.?{}°§£:'`~{}|<>+=[\]\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*(),.?{}°§£:'_-`~{}|<>+=[\]\\/]{10,}">
+                    <input required type="password" class="form-control" name="Confirmation mot de passe" id="passwordConfirmation" aria-describedby="note-confirmPassword" minlength="10" maxlength="50" pattern="(?=(.*[a-zà-ÿœ]))(?=(.*[A-ZÀ-ÖØ-ÝŸ]))(?=(.*[0-9]))(?=(.*[;:!@#$%^&*\(\),.?\{\}°§£:'`~\|<>+=\[\]\\\/]))[a-zà-ÿœA-ZÀ-ÖØ-ÝŸ0-9;:!@#$%^&*\(\),.?\{\}°§£:'_\-`~\|<>+=\[\]\\\/]{10,}">
                     <img class="eye-icon-password" id="eyeIconPswConfirmation" src="../img/icons/eye-slash-icon-grey.svg" alt="Icone oeil fermé" title="Afficher le mot de passe" aria-hidden="true">
                     <img class="icon-input js-display" src="../img/icons/cross-icon-red.svg" alt="Icon croix roug" aria-label="Votre saisie est incorrecte">
                 </div>
                 <small id="note-confirmPassword" class="form-text text-muted">Réécrivez votre mot de passe pour confirmer.</small>
             </div>
+            <small class="text-center mt-3">* Champs obligatoires</small>
             <button type="submit" id="submit" class="btn btn__orange btn-lg text-black" disabled>
                 M'inscrire
             </button>
-            <p class="m-auto mt-3 mb-3">En vous inscrivant, vous acceptez les <a href="#">conditions d'utilisation</a> de la plateforme EcoRide.</p>
+            <p class="m-auto mt-3 mb-3 text-center">En vous inscrivant, vous acceptez les <a href="#">conditions d'utilisation</a> de la plateforme EcoRide.</p>
         </form>
         <hr>
-        <div class="d-flex flex-column justify-content-center mt-3 pb-5">
-            <p class="m-auto">Vous avez déjà un compte?</p>
-            <a class="d-block m-auto" href="#">Se connecter</a>
+        <div>
+            <p class="m-auto text-center">Vous avez déjà un compte?</p>
+            <a class="d-block m-auto text-center" href="login.html">Se connecter</a>
         </div>
     </main>
       
     <footer>
         <img class="ecoride-logo ecoride-logo__footer" src="../img/logo/logo-with-slogan.svg" alt="Logo de EcoRige" aria-hidden="true">
-        <small class="row text-center justify-content-around footer-links-div">
-            <a href="#" role="link" class="col-sm-auto">Mentions légales</a>
-            <a href="#" role="link" class="col-sm-auto">Politique de confidentialité</a>
-            <a href="#" role="link" class="col-sm-auto">Conditions d'utilisation</a>
-            <a href="#" role="link" class="col-sm-auto">Accueil</a>
-            <a href="#" role="link" class="col-sm-auto">FAQ</a>
-            <a href="#" role="link" class="col-sm-auto">Contact</a>
+        <small class="d-flex flex-column flex-sm-row flex-wrap justify-content-sm-around m-auto footer-links-div">
+            <a href="#" role="link">Mentions légales</a>
+            <a href="#" role="link">Politique de confidentialité</a>
+            <a href="#" role="link">Conditions d'utilisation</a>
+            <a href="../index.html" role="link">Accueil</a>
+            <a href="#" role="link">FAQ</a>
+            <a href="#" role="link">Contact</a>
         </small>
-        <p class="text-center text-white" aria-label="Notre adresse email de contact">contact@ecoride.fr</p>
+        <p class="text-center m-auto mt-3" aria-label="Notre adresse email de contact">contact@ecoride.fr</p>
     </footer>
 </body>
 

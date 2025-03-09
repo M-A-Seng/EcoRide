@@ -28,11 +28,11 @@ function iconDisplay(field, isValid) {
         field.classList.remove("valid");
         field.classList.add("invalid");
         icon.style.display = "block"; //afficher l'icone rouge
-        icon.src = "../img/pictures/cross-icon-red.svg"; //afficher l'icone rouge
+        icon.src = "../img/icons/cross-icon-red.svg"; //afficher l'icone rouge
     } else {
         field.classList.remove("invalid");
         field.classList.add("valid");
-        icon.src = "../img/pictures/check-icon-green.svg"; //afficher l'icone vert
+        icon.src = "../img/icons/check-icon-green.svg"; //afficher l'icone vert
         icon.style.display = "block"; //afficher l'icone vert
     };
 };

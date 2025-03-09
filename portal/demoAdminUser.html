@@ -19,7 +19,7 @@
 
 <body>
     <div class="fixed">
-        <div class="credit-banner" style="background-color:#f3b271;justify-content:center;"><p style="text-align:center;font-size:0.87rem;">Plateforme en développement!</p></div>    
+        <div class="credit-banner" style="background-color:#f3b271;justify-content:center;"><p style="text-align:center;font-size:0.87rem;margin:auto;">Cette page est une démo</p></div>    
         <header>
             <div class="header-div-left">
                 <!--Burger menu icon-->
@@ -35,7 +35,7 @@
                 <div class="dropdown">
                     <img class="header-icon profil-picture profil-picture__header dropdown-toggle" src="../img/images/default-profil_stephanie-edwards-pixabay.png" alt="Icon avec photo de profil" type="button" role="button" id="triggerId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Ouvrir ou fermer la liste déroulante">
                     <div class="dropdown-menu" id="dropdown-menu-override" aria-labelledby="triggerId">
-                        <a class="dropdown-item d-flex align-items-center active" href="#" role="link">Profil</a>
+                        <a class="dropdown-item d-flex align-items-center active" href="demoAdminUser.html" role="link">Profil</a>
                         <a class="dropdown-item d-flex align-items-center" href="#"  role="link">Notifications</a>
                         <a class="dropdown-item d-flex align-items-center" href="#" role="link">Mes covoiturages</a>
                         <a class="dropdown-item d-flex align-items-center" href="#"  role="link">Mes voitures</a>
@@ -66,14 +66,9 @@
             </div>
         </div>
         <hr><!--Sidebar body (links)-->
-        <div class="d-none"> <!--Ne pas oublier d'enlever d-none pour dev backend-->
-            <a href="#" class="side-menu-item" role="link">Connexion</a>
-            <a href="#" class="side-menu-item" role="link">Inscription</a>
-            <hr>
-        </div>
         <div>
             <div class="">
-                <a href="#" class="side-menu-item" role="link">Accueil</a>
+                <a href="../index.html" class="side-menu-item" role="link">Accueil</a>
                 <a href="#" class="side-menu-item active" role="link">Profil</a>
                 <a href="#" class="side-menu-item" role="link">Notifications</a>
                 <a href="#" class="side-menu-item" role="link">Trouver un covoiturage</a>
@@ -91,7 +86,7 @@
         </div>
     </nav>
 
-    <main>
+    <main id="main-userpage">
         <section>
             <div class="d-flex flex-column justify-content-center">
                 <img class="d-block profil-picture profil-picture__profil m-auto" src="../img/images/default-profil_stephanie-edwards-pixabay.png" alt="Photo de profil">
@@ -123,16 +118,16 @@
     </main>
 
     <footer>
-    <img class="ecoride-logo ecoride-logo__footer" src="../img/logo/logo-with-slogan.svg" alt="Logo de EcoRige" aria-hidden="true">
-    <small class="d-flex flex-column flex-sm-row flex-wrap justify-content-sm-around m-auto footer-links-div">
-        <a href="#" role="link">Mentions légales</a>
-        <a href="#" role="link">Politique de confidentialité</a>
-        <a href="#" role="link">Conditions d'utilisation</a>
-        <a href="#" role="link">Accueil</a>
-        <a href="#" role="link">FAQ</a>
-        <a href="#" role="link">Contact</a>
-    </small>
-    <p class="text-center m-auto mt-3" aria-label="Notre adresse email de contact">contact@ecoride.fr</p>
+        <img class="ecoride-logo ecoride-logo__footer" src="../img/logo/logo-with-slogan.svg" alt="Logo de EcoRige" aria-hidden="true">
+        <small class="d-flex flex-column flex-sm-row flex-wrap justify-content-sm-around m-auto footer-links-div">
+            <a href="#" role="link">Mentions légales</a>
+            <a href="#" role="link">Politique de confidentialité</a>
+            <a href="#" role="link">Conditions d'utilisation</a>
+            <a href="../index.html" role="link">Accueil</a>
+            <a href="#" role="link">FAQ</a>
+            <a href="#" role="link">Contact</a>
+        </small>
+        <p class="text-center m-auto mt-3" aria-label="Notre adresse email de contact">contact@ecoride.fr</p>
     </footer>
 </body>
 

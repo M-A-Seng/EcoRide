@@ -78,7 +78,18 @@ main
     flex: 1
     background-color: $light-primary
     color: #000000
-    padding: 7rem 0 0 0
+
+#main-homepage
+    margin: 0
+    padding: 4.4rem 0 5rem 0
+    & p
+        width: 90%
+#main-userpage
+    margin: 0
+    padding: 8rem 0 0 0
+#main-portal
+    margin: 0
+    padding: 6rem 0.5rem 5rem
 
 //html body height 100% + body flexbox + main flex: 1; permet de garder le footer en bas de page
 
@@ -96,10 +107,9 @@ h1
 
 p
     // default font-size 16px (1rem)
-    width: 90%
     text-align: center
     line-height: 1.6rem //22px
-    margin: 0.75rem 0 // =1.5rem entre paragraphe soit 24px/default
+    margin: 0.75rem auto // =1.5rem entre paragraphe soit 24px/default
 
 small
     display: inline-block
@@ -136,7 +146,7 @@ header
 .header-icon
     cursor: pointer
     margin: 0 0.5rem
-.menu-icon
+.menu-icon, .user-icon
     height: 2.3rem
 .search-icon, .modo-icon
     height: 1.5rem
@@ -159,6 +169,7 @@ header
     position: fixed
     top: 0
     width: 100%
+    z-index: 100
 
 footer
     width: 100%
@@ -298,6 +309,7 @@ footer
     &__orange
         background: $orange-primary
         border: 3px color.scale($orange-primary, $lightness: -50%) solid
+        color: #000000
         &:hover, &:active
             border: 3px color.scale($orange-primary, $lightness: -60%) solid
             background: color.scale($orange-primary, $saturation: 20%)

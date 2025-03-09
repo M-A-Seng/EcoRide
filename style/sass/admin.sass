@@ -19,6 +19,8 @@ $green-secondary: #515b49
 $light-primary: #E7EBE3
 // active navigation links 
 $brown-primary: #3C3730  
+// Arrière plan desktop
+$desktop-background: #80887f
 
 // titres
 @mixin serif-font
@@ -39,6 +41,9 @@ $brown-primary: #3C3730
 #adminMode header, #adminMode footer, #adminMode .dropdown-menu, #adminMode #side-menu
     background-color: $green-primary
 
+#adminMode
+    background-color: $desktop-background
+
 #adminMode .dropdown-item, #adminMode .side-menu-item
     background-color: $green-secondary
     &:hover, &:hover
@@ -51,3 +56,4 @@ $brown-primary: #3C3730
 
 #adminMode .ecoride-logo
     opacity: 80%
+

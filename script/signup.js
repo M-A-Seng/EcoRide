@@ -10,16 +10,20 @@ console.log("signup.js is running!")
 
 function nameVerification(field) {
     const fieldValue = field.value
+    const twoLetterRegex = /^(?=(.*[a-zA-ZÀ-ÿ].*){2,})/;
     let note = field.closest('.form-element').querySelector('.note'); // Sélectionner le message associé
 
-    const isValidName = !(fieldValue.length < 2 && fieldValue.length > 50 && !nameRegex.test(fieldValue));
+    const isValidName = !(fieldValue.length < 2 || fieldValue.length > 50 || !nameRegex.test(fieldValue));
     iconDisplay(field, isValidName); //Appeler la fonction de gestion des retours visuels (form.js)
 
-    if (fieldValue.length < 2 && fieldValue.length > 50 && !nameRegex.test(fieldValue)) {
+    if (!twoLetterRegex.test(fieldValue)) {
+        note.innerHTML = "Saisissez au moins 2 lettres"
+        note.style.display = "block"; //afficher le message sous le champ
+    } else if (!nameRegex.test(fieldValue)) {
+        note.innerHTML = "Seuls les lettres, les espaces et les tirets (-) sont acceptés."
         note.style.display = "block"; //afficher le message sous le champ
     } else {
-        note.style.display = "none";
-    };
+        note.style.display = "none"; }
 };
 
 // Surveiller les inputs individuellement
@@ -33,11 +37,17 @@ document.querySelectorAll(".name-input").forEach(function(input) {
 // VERIFICATION EMAIL
 
 function emailVerification() {
-    const emailValue = email.value
+    const note = document.getElementById("note-email");
+    const emailValue = email.value;
     // expression régulière pour verification email
     const isValidEmail = (emailValue.length > 7 && emailValue.length < 150 && emailRegex.test(emailValue));
-
     iconDisplay(email, isValidEmail); //Appeler la fonction de gestion des retours visuels (form.js)
+
+    if (!emailRegex.test(emailValue)) {
+        note.innerHTML = '<span style="color:red;">Adresse email invalide</span>'
+    } else {
+        note.innerHTML = ''
+    }
 };
 
 // Surveiller l'interaction avec le champ
@@ -134,11 +144,11 @@ function togglePasswordVisibility() {
     eyePassword.addEventListener('click', () => {
         if (password.type === "password") {
             password.type = "text";
-            eyePassword.src = "../img/pictures/eye-open-icon-blue.svg";
+            eyePassword.src = "../img/icons/eye-open-icon-blue.svg";
             eyePassword.title = "Masquer le mot de passe";
         } else {
             password.type = "password";
-            eyePassword.src = "../img/pictures/eye-slash-icon-grey.svg";
+            eyePassword.src = "../img/icons/eye-slash-icon-grey.svg";
             eyePassword.title = "Afficher le mot de passe";
         }
     });
@@ -146,11 +156,11 @@ function togglePasswordVisibility() {
     eyePasswordConfirm.addEventListener('click', () => {
         if (passwordConfirm.type === "password") {
             passwordConfirm.type = "text";
-            eyePasswordConfirm.src = "../img/pictures/eye-open-icon-blue.svg";
+            eyePasswordConfirm.src = "../img/icons/eye-open-icon-blue.svg";
             eyePasswordConfirm.title = "Masquer le mot de passe";
         } else {
             passwordConfirm.type = "password";
-            eyePasswordConfirm.src = "../img/pictures/eye-slash-icon-grey.svg";
+            eyePasswordConfirm.src = "../img/icons/eye-slash-icon-grey.svg";
             eyePasswordConfirm.title = "'Afficher le mot de passe";
         }
     });
@@ -162,8 +172,7 @@ togglePasswordVisibility();
 
 function enableSubmissionButton() {
     if ( //Vérifie que tous les champs sont correctement remplie
-        lastName.value.length > 2 && lastName.value.length < 50 && nameRegex.test(lastName.value)
-        && firstName.value.length > 2 && firstName.value.length < 50 && nameRegex.test(firstName.value)
+        firstName.value.length > 2 && firstName.value.length < 50 && nameRegex.test(firstName.value)
         && email.value.length > 7 && email.value.length < 150 && emailRegex.test(email.value)
         && passwordRegex.test(password.value)
         && password.value === passwordConfirm.value
