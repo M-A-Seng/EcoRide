@@ -39,7 +39,7 @@ Vous pouvez également télécharger son contenu GitHub et ouvrir EcoRide locale
 - Dans l'onglet "<>Code" cliquez sur le bouton vert "<>Code ▼"
     - Dans le menu déroulant, cliquez sur "Download ZIP"
         - Faite extraire le fichier .zip précédemment téléchargé dans un dossier vierge.
-            - Ouvrez le fichier index.html dans votre navigateur. 
+            - Ouvrez le fichier index.html dans votre navigateur.  
 Seule une connexion internet est requise.  
 
 ## Fonctionnalités

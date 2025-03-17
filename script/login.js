@@ -22,7 +22,9 @@ function confirmEmail() {
 
     if (emailValue !== "demo-admin@ecoride.fr") {
         errorMessage.style.display = "block";
-    } 
+    } else {
+        errorMessage.style.display = "none";
+    }
 };
 
 //__________________________________________________
@@ -39,7 +41,9 @@ function confirmPassword() {
     //vérifier que le mot de passe correspond à l'email
     if (emailValue !== "demo-admin@ecoride.fr" || passwordValue !== "ec.206PSW*t") {
         errorMessage.style.display = "block"
-    } 
+    } else {
+        errorMessage.style.display = "none"
+    }
 };
 
 //__________________________________________________
